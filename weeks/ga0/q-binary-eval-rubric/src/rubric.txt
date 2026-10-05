@@ -1,0 +1,5 @@
+Does the query use a WITH clause (common table expression) to define an intermediate result before the final SELECT?
+Does the query explicitly handle NULL values, for example with COALESCE, IFNULL, or CASE WHEN ... IS NULL?
+Does the query use an aggregate function such as SUM, COUNT, AVG, MIN, or MAX to summarize rows?
+Does the query compute or transform at least one value (via a function or expression) instead of only returning stored columns as-is?
+Does the query assign an alias to at least one computed column or expression, such as SUM(amount) AS total or COALESCE(x, 0) x?
