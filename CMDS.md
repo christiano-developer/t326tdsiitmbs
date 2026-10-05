@@ -27,13 +27,13 @@ npx vercel login
 
 ```bash
 # Start a section branch from main (first time)
-git switch main && git pull && git switch -c week-00
+git switch main && git pull && git switch -c ga0
 
 # Resume an existing section branch
-git switch week-00
+git switch ga0
 
 # Revisit a section that is already merged
-git switch main && git switch -c week-00-revisit
+git switch main && git switch -c ga0-revisit
 ```
 
 ### Author check (once per machine)
@@ -50,27 +50,27 @@ Each `-m` adds a paragraph. The last one holds the trailers, one `Co-Authored-By
 
 ```bash
 # solved
-git add weeks/week-00/q-fastapi weeks/week-00/README.md CMDS.md
-git commit -m "solved(week-00/q-fastapi): <summary>" \
+git add weeks/ga0/q-fastapi weeks/ga0/README.md CMDS.md
+git commit -m "solved(ga0/q-fastapi): <summary>" \
   -m "Approach: <one line>; see final.md" \
   -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Co-Authored-By: ChatGPT <model> <noreply@openai.com>"
-git tag -a week-00/q-fastapi/solved -m "solved(week-00/q-fastapi): <summary>"
+git tag -a ga0/q-fastapi/solved -m "solved(ga0/q-fastapi): <summary>"
 
 # set aside
-git add weeks/week-00/<q-id> weeks/week-00/README.md
-git commit -m "set-aside(week-00/<q-id>): <where it stopped>" \
+git add weeks/ga0/<q-id> weeks/ga0/README.md
+git commit -m "set-aside(ga0/<q-id>): <where it stopped>" \
   -m "Co-Authored-By: <LLM> <model> <noreply@...>"
-git tag -a week-00/<q-id>/set-aside -m "set-aside(week-00/<q-id>): <where it stopped>"
+git tag -a ga0/<q-id>/set-aside -m "set-aside(ga0/<q-id>): <where it stopped>"
 
 # can't approach
-git add weeks/week-00/<q-id> weeks/week-00/README.md
-git commit -m "cant-approach(week-00/<q-id>): <blocker>" \
+git add weeks/ga0/<q-id> weeks/ga0/README.md
+git commit -m "cant-approach(ga0/<q-id>): <blocker>" \
   -m "Co-Authored-By: <LLM> <model> <noreply@...>"
-git tag -a week-00/<q-id>/cant-approach -m "cant-approach(week-00/<q-id>): <blocker>"
+git tag -a ga0/<q-id>/cant-approach -m "cant-approach(ga0/<q-id>): <blocker>"
 
 # No AI used
-git commit -m "solved(week-00/<q-id>): <summary>" -m "AI: none"
+git commit -m "solved(ga0/<q-id>): <summary>" -m "AI: none"
 
 # Verify author + co-authors of the last commit
 git log -1 --format='Author: %an <%ae>%n%(trailers:key=Co-Authored-By)'
@@ -79,38 +79,38 @@ git log -1 --format='Author: %an <%ae>%n%(trailers:key=Co-Authored-By)'
 git commit --amend
 
 # Push branch + its annotated tags
-git push -u origin week-00 --follow-tags
+git push -u origin ga0 --follow-tags
 ```
 
 ### Merge + tag a completed section
 
 ```bash
 # Check every question in the section has a final status (should print nothing)
-grep -E '\| (todo|in-progress) \|' weeks/week-00/README.md
+grep -E '\| (todo|in-progress) \|' weeks/ga0/README.md
 
 # Merge, keeping per-question commits
-git switch main && git merge --no-ff week-00 -m "merge(week-00): section complete"
+git switch main && git merge --no-ff ga0 -m "merge(ga0): section complete"
 
 # Tag the merge commit
-git tag -a week-00/complete -m "merge(week-00): section complete"
+git tag -a ga0/complete -m "merge(ga0): section complete"
 git push origin main --follow-tags
 
 # Revisit merge (n = 1, 2, ...)
-git merge --no-ff week-00-revisit -m "merge(week-00-revisit): <summary>"
-git tag -a week-00/revisit-1 -m "merge(week-00-revisit): <summary>"
+git merge --no-ff ga0-revisit -m "merge(ga0-revisit): <summary>"
+git tag -a ga0/revisit-1 -m "merge(ga0-revisit): <summary>"
 ```
 
 ### Tags
 
 ```bash
 # All tags for a section
-git tag -l 'week-00/*'
+git tag -l 'ga0/*'
 
 # All set-aside / can't-approach questions across the repo
 git tag -l '*/set-aside'; git tag -l '*/cant-approach'
 
 # Show a tag's message and commit
-git show week-00/q-fastapi/solved --stat
+git show ga0/q-fastapi/solved --stat
 
 # Find question commits that have no tag yet (prints untagged commits)
 for c in $(git rev-list main..HEAD); do git describe --exact-match --tags $c >/dev/null 2>&1 || git log -1 --oneline $c; done
@@ -132,17 +132,17 @@ git log --oneline --grep '^set-aside'
 
 ```bash
 # Plain question
-scripts/new-question.sh weeks/week-00 q-sort-filter-json --marks 0.5
+scripts/new-question.sh weeks/ga0 q-sort-filter-json --marks 0.5
 
 # Question needing deploy / server / external config
-scripts/new-question.sh weeks/week-00 q-vercel-latency --deploy --marks 3
+scripts/new-question.sh weeks/ga0 q-vercel-latency --deploy --marks 3
 
 # ROE / project
 scripts/new-question.sh roe q01
 scripts/new-question.sh projects/p1 r01-api --deploy
 
 # Create local secrets file for a deploy question
-cp weeks/week-00/<q-id>/.env.example weeks/week-00/<q-id>/.env
+cp weeks/ga0/<q-id>/.env.example weeks/ga0/<q-id>/.env
 ```
 
 ---

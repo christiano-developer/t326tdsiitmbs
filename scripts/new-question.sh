@@ -5,8 +5,8 @@
 #   scripts/new-question.sh <section-dir> <question-id> [--deploy] [--marks N]
 #
 # Examples:
-#   scripts/new-question.sh weeks/week-00 q-sort-filter-json --marks 0.5
-#   scripts/new-question.sh weeks/week-00 q-vercel-latency --deploy --marks 3
+#   scripts/new-question.sh weeks/ga0 q-sort-filter-json --marks 0.5
+#   scripts/new-question.sh weeks/ga0 q-vercel-latency --deploy --marks 3
 #   scripts/new-question.sh roe q01
 #   scripts/new-question.sh projects/p1 r01-api --deploy
 #

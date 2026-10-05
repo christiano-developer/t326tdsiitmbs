@@ -25,7 +25,7 @@ The goal is **reproducibility**. For every question the repo records:
 4. **one final prompt + steps that reproduce the answer from scratch**,
 5. for deploy/server/external-config questions, the exact commands and a guide to get it running.
 
-Each question is a self-contained folder. Each section (week, project, ROE) is a branch.
+Each question is a self-contained folder. Each section (GA, project, ROE) is a branch.
 Each question ends in exactly one commit, and each commit gets its own tag.
 
 ---
@@ -39,7 +39,7 @@ templates/
   question/                README.md, prompts.md, approaches.md, final.md
   deploy/                  deploy.md, .env.example
 scripts/new-question.sh    scaffolds a question folder from templates/
-weeks/week-00 … week-08/   one folder per GA (week-00 = GA0)
+weeks/ga0 … ga8/           one folder per GA (ga0 = GA0)
 projects/p1, p2/           one folder per requirement
 roe/                       one folder per ROE question
 ```
@@ -87,10 +87,10 @@ Never commit `.env`, tokens or keys. Only `.env.example` with names.
 
 | Section | Branch |
 |---------|--------|
-| GA0 … GA8 | `week-00` … `week-08` |
+| GA0 … GA8 | `ga0` … `ga8` |
 | Project 1 / 2 | `project-p1`, `project-p2` |
 | ROE | `roe` |
-| Revisit a closed section | `<branch>-revisit`, e.g. `week-00-revisit` |
+| Revisit a closed section | `<branch>-revisit`, e.g. `ga0-revisit` |
 
 - Branch from `main`.
 - Merge into `main` **only when the section is complete**, using `git merge --no-ff` so per-question commits stay visible.
@@ -116,8 +116,8 @@ Message format:
 <type>(<section>/<q-id>): <one-line summary>
 
 e.g.
-solved(week-00/q-fastapi): GET /api endpoint deployed on Vercel
-set-aside(week-00/q-dbt-operations-dashboard): mart layer pending
+solved(ga0/q-fastapi): GET /api endpoint deployed on Vercel
+set-aside(ga0/q-dbt-operations-dashboard): mart layer pending
 cant-approach(roe/q07): needs paid API, no access
 ```
 
@@ -146,7 +146,7 @@ Every commit records **who** made it and **which LLMs/agents** helped:
 Full commit message:
 
 ```
-solved(week-00/q-fastapi): GET /api endpoint deployed on Vercel
+solved(ga0/q-fastapi): GET /api endpoint deployed on Vercel
 
 Approach: FastAPI on Vercel serverless; see final.md
 
@@ -165,13 +165,13 @@ Every section merge also gets a tag.
 
 | Event | Tag | Example |
 |-------|-----|---------|
-| Question commit | `<section>/<q-id>/<type>` | `week-00/q-fastapi/solved` |
-| | | `week-00/q-dbt-operations-dashboard/set-aside` |
+| Question commit | `<section>/<q-id>/<type>` | `ga0/q-fastapi/solved` |
+| | | `ga0/q-dbt-operations-dashboard/set-aside` |
 | | | `roe/q07/cant-approach` |
-| Section merged into `main` | `<section>/complete` | `week-00/complete`, `project-p1/complete` |
-| Revisit merged into `main` | `<section>/revisit-<n>` | `week-00/revisit-1` |
+| Section merged into `main` | `<section>/complete` | `ga0/complete`, `project-p1/complete` |
+| Revisit merged into `main` | `<section>/revisit-<n>` | `ga0/revisit-1` |
 
-- `<section>` uses the branch name: `week-00` … `week-08`, `project-p1`, `project-p2`, `roe`.
+- `<section>` uses the branch name: `ga0` … `ga8`, `project-p1`, `project-p2`, `roe`.
 - Always annotated (`git tag -a`). The message repeats the commit's one-line summary.
 - Tags are never moved or deleted. A set-aside question that's solved later gets a **new** `…/solved` tag, and the old `…/set-aside` tag stays as history.
 - Push tags along with the branch (`git push --follow-tags`).
