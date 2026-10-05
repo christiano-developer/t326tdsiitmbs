@@ -77,6 +77,12 @@ Anything else (other questions, `templates/`, `scripts/`, this README) needs **e
 
 Propose first, execute only after approval. This covers scaffolding, deploying, committing, branching and merging.
 
+**Standing approval for question commits:** when the user reports that a question passed on the exam
+("correct", "passed", "it worked", …), that counts as approval to close it: set Status `solved`, update the
+docs and section table, then make its `solved` commit and tag (§5, §6) on the section branch, without asking
+again. This doesn't cover `set-aside` / `cant-approach` commits, `setup:` commits, syncs, merges or pushes;
+those still need an explicit go-ahead.
+
 ### 3.3 Secrets
 
 Never commit `.env`, tokens or keys. Only `.env.example` with names.
