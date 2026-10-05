@@ -175,6 +175,17 @@ ollama pull <model> && ollama serve
 
 ---
 
+### Headless Chrome (render / screenshot a local HTML page)
+
+```bash
+# Screenshot a local HTML file (waits up to 5s for JS like Chart.js to draw)
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
+  --window-size=1000,450 --virtual-time-budget=5000 \
+  --screenshot="$PWD/out.png" "file://$PWD/page.html"
+```
+
+---
+
 ## 5. One-liners
 
 ```bash
@@ -183,4 +194,15 @@ jq '.' file.json
 
 # Fetch a URL and show only headers
 curl -sI <url>
+```
+
+### Exam submissions
+
+```bash
+# Copy a submission file to the clipboard (never copy from terminal output — wrapping mangles it)
+pbcopy < weeks/ga0/<q-id>/src/<file>
+
+# Download the GA quiz JS to read grader logic (hacking is allowed in TDS)
+curl -sL https://exam.sanand.workers.dev/exam-tds-2026-09-ga0.js -o /tmp/ga0.js
+grep -o 'outside tolerance' /tmp/ga0.js   # then read the surrounding check function
 ```

@@ -1,0 +1,25 @@
+<!-- Manipulation: Truncated y-axis. scales.y.min was hard-set to 825.62 (94% of the lowest value, 878.32) with beginAtZero:false, so the baseline sits just below the data and a small rise fills the whole plot.
+Quantification: Actual change Jan->Aug = 878.32 -> 924.2 = +45.88 (+5.22%, ratio 1.052). Measured from the 825.62 baseline, the line height goes 52.70 -> 98.58 (ratio 1.871), so the rise looks like +87.06%.
+Distortion: Lie factor = 87.06% / 5.22% = 16.7x (apparent change is ~16.7 times the real change).
+Fix: Removed the hard-coded y min and set beginAtZero:true so the y-axis starts at 0. Data, labels and styling are unchanged.
+Insight: With a zero baseline the Revenue Index shows a steady, modest ~5% rise over eight months, not the dramatic quarterly uplift the truncated axis implied. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What does this chart claim to show? Quarterly uplift is dramatic</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; }
+    canvas { max-height: 340px; }
+  </style>
+</head>
+<body>
+  <h3>What does this chart claim to show? Quarterly uplift is dramatic</h3>
+  <canvas id="chart"></canvas>
+  <script>
+    new Chart(document.getElementById('chart'), {"type":"line","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"],"datasets":[{"label":"Revenue Index","data":[878.32,881.79,893.89,900.98,904.68,909.63,915.66,924.2],"borderColor":"#2563eb","backgroundColor":"rgba(37, 99, 235, 0.15)","tension":0.3}]},"options":{"responsive":true,"plugins":{"title":{"display":true,"text":"What does this chart claim to show? Quarterly uplift is dramatic"}},"scales":{"y":{"beginAtZero":true}}}});
+  </script>
+</body>
+</html>
