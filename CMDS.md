@@ -100,6 +100,17 @@ git merge --no-ff ga0-revisit -m "merge(ga0-revisit): <summary>"
 git tag -a ga0/revisit-1 -m "merge(ga0-revisit): <summary>"
 ```
 
+### Sync main into a section branch (after a `setup:` commit)
+
+```bash
+# Merge (never rebase) so pushed commits and their tags stay intact; n = 1, 2, ...
+git switch ga0
+git merge --no-ff main -m "sync(ga0): merge main (setup/<name>)" \
+  -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+git tag -a ga0/sync-1 -m "sync(ga0): merge main (setup/<name>)"
+git push origin ga0 --follow-tags
+```
+
 ### Tags
 
 ```bash

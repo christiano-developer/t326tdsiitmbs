@@ -112,6 +112,16 @@ Before solving, **inspect the question and its grader**, not just the visible te
 - A section is **complete** when every question has status `solved`, `set-aside` or `cant-approach`.
 - **No direct commits to `main`**, except repo-level files (`README.md`, `CMDS.md`, `templates/`, `scripts/`, `.gitignore`).
 
+### Syncing repo-level changes into a section branch
+
+Repo-level changes are committed on `main` as `setup:` commits. To bring them into an open section branch:
+
+- **Merge, never rebase, once the branch has commits.** Rebasing rewrites already-pushed commits and leaves
+  their tags pointing at the old copies (it happened once and had to be undone). Rebase is only safe on a
+  branch with no commits of its own yet.
+- Run `git merge --no-ff main` on the section branch → one **`sync`** commit, tagged `<section>/sync-<n>`.
+- Sync right after each `setup:` commit, so agents working on the branch always see the current rules.
+
 ---
 
 ## 5. Commits
@@ -137,6 +147,14 @@ cant-approach(roe/q07): needs paid API, no access
 ```
 
 A set-aside question solved later gets its own `solved(...)` commit, on the `-revisit` branch if the section is already merged.
+
+Non-question commits (the only exceptions to one-commit-per-question):
+
+| Type | Where | Message format |
+|------|-------|----------------|
+| `setup` | `main` | `setup: <repo-level change>` |
+| `sync` | section branch (merge commit) | `sync(<section>): merge main (<setup tag>)` |
+| `merge` | `main` (merge commit) | `merge(<section>): section complete` |
 
 ### Authorship
 
@@ -185,6 +203,8 @@ Every section merge also gets a tag.
 | | | `roe/q07/cant-approach` |
 | Section merged into `main` | `<section>/complete` | `ga0/complete`, `project-p1/complete` |
 | Revisit merged into `main` | `<section>/revisit-<n>` | `ga0/revisit-1` |
+| `main` synced into a section branch | `<section>/sync-<n>` | `ga0/sync-1` |
+| Repo-level `setup:` commit on `main` | `setup/<short-name>` | `setup/initial`, `setup/inspect-step` |
 
 - `<section>` uses the branch name: `ga0` … `ga8`, `project-p1`, `project-p2`, `roe`.
 - Always annotated (`git tag -a`). The message repeats the commit's one-line summary.
