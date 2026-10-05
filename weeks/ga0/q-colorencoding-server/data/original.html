@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Traffic by Source</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #212529;
+      --subtext: #6c757d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #212529;
+        --text: #f8f9fa;
+        --subtext: #adb5bd;
+      }
+    }
+    body { font-family: sans-serif; margin: 16px; background: var(--bg); color: var(--text); }
+    h2 { font-size: 1rem; margin-bottom: 4px; }
+    p  { font-size: 0.8rem; color: var(--subtext); margin-bottom: 12px; }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+  <h2>Website Traffic by Source</h2>
+  <p>Monthly visits (thousands) by traffic source: Organic, Paid, Social, Direct, Email</p>
+  <canvas id="chart"></canvas>
+  <script>
+    // WRONG: categorical palette applied to sequential data
+    const colors = ["#feedde","#fdbe85","#fd8d3c","#e6550d","#a63603"];
+    new Chart(document.getElementById('chart'), {
+      type: 'bar',
+      data: {
+        labels: ["Organic","Paid","Social","Direct","Email"],
+        datasets: [{
+          label: 'Website Traffic by Source',
+          data: [85,42,33,67,18],
+          backgroundColor: colors,
+          borderColor: colors,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>
