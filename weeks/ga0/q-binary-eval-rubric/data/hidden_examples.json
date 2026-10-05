@@ -1,0 +1,115 @@
+{
+  "source": "exam-tds-2026-09-ga0.js (sql_query_quality variant)",
+  "judge": {
+    "model": "gpt-4.1-mini",
+    "temperature": 0,
+    "system": "You are a strict binary evaluator. Decide whether the answer to the check question is YES by reading the candidate output only. Respond with exactly one token: YES or NO.",
+    "user_template": "Check question:\n{check}\n\nCandidate output:\n{output}\n\nAnswer YES or NO only."
+  },
+  "taskDescription": "SQL query quality for an analytics task",
+  "goodExample": "WITH clean_orders AS (\n  SELECT order_id, customer_id, COALESCE(total_amount, 0) AS total_amount, order_date\n  FROM orders\n  WHERE order_date >= DATE '2025-01-01'\n), customer_spend AS (\n  SELECT customer_id, SUM(total_amount) AS spend\n  FROM clean_orders\n  GROUP BY customer_id\n)\nSELECT customer_id, spend\nFROM customer_spend\nWHERE spend > 500\nORDER BY spend DESC;",
+  "mediocreExample": "SELECT customer_id, SUM(total_amount) AS spend\nFROM orders\nWHERE order_date >= '2025-01-01'\nGROUP BY customer_id\nORDER BY spend DESC;",
+  "poorExample": "SELECT * FROM orders;",
+  "hiddenExamples": [
+    {
+      "id": 1,
+      "label": 1,
+      "output": "WITH base AS (SELECT customer_id, COALESCE(amount,0) amount FROM payments) SELECT customer_id, SUM(amount) total FROM base GROUP BY customer_id;"
+    },
+    {
+      "id": 2,
+      "label": 0,
+      "output": "SELECT * FROM payments WHERE created_at > '2025-01-01';"
+    },
+    {
+      "id": 3,
+      "label": 1,
+      "output": "WITH cte AS (SELECT id, COALESCE(status,'unknown') status FROM tickets) SELECT status, COUNT(*) FROM cte GROUP BY status;"
+    },
+    {
+      "id": 4,
+      "label": 0,
+      "output": "SELECT id, user_id, status, created_at, updated_at FROM tickets;"
+    },
+    {
+      "id": 5,
+      "label": 1,
+      "output": "WITH filtered AS (SELECT order_id, customer_id FROM orders WHERE order_date >= CURRENT_DATE - INTERVAL '30 days') SELECT customer_id, COUNT(*) cnt FROM filtered GROUP BY customer_id;"
+    },
+    {
+      "id": 6,
+      "label": 0,
+      "output": "SELECT * FROM users u JOIN orders o ON u.id=o.user_id;"
+    },
+    {
+      "id": 7,
+      "label": 1,
+      "output": "WITH revenue AS (SELECT region, SUM(COALESCE(revenue,0)) r FROM sales GROUP BY region) SELECT region, r FROM revenue ORDER BY r DESC;"
+    },
+    {
+      "id": 8,
+      "label": 0,
+      "output": "SELECT region, revenue FROM sales;"
+    },
+    {
+      "id": 9,
+      "label": 1,
+      "output": "WITH sessions AS (SELECT user_id, COALESCE(duration_sec,0) d FROM app_sessions) SELECT user_id, AVG(d) avg_d FROM sessions GROUP BY user_id;"
+    },
+    {
+      "id": 10,
+      "label": 0,
+      "output": "SELECT * FROM app_sessions WHERE duration_sec > 0;"
+    },
+    {
+      "id": 11,
+      "label": 1,
+      "output": "WITH x AS (SELECT product_id, COALESCE(stock,0) stock FROM inventory) SELECT product_id FROM x WHERE stock = 0;"
+    },
+    {
+      "id": 12,
+      "label": 0,
+      "output": "SELECT product_id, stock FROM inventory;"
+    },
+    {
+      "id": 13,
+      "label": 1,
+      "output": "WITH base AS (SELECT DATE(order_ts) d, COALESCE(total,0) total FROM orders) SELECT d, SUM(total) FROM base GROUP BY d;"
+    },
+    {
+      "id": 14,
+      "label": 0,
+      "output": "SELECT * FROM orders ORDER BY order_ts DESC;"
+    },
+    {
+      "id": 15,
+      "label": 1,
+      "output": "WITH normalized AS (SELECT customer_id, COALESCE(country,'UNKNOWN') country FROM customers) SELECT country, COUNT(*) FROM normalized GROUP BY country;"
+    },
+    {
+      "id": 16,
+      "label": 0,
+      "output": "SELECT customer_id, country FROM customers;"
+    },
+    {
+      "id": 17,
+      "label": 1,
+      "output": "WITH recent AS (SELECT id, COALESCE(score,0) score FROM reviews WHERE created_at >= CURRENT_DATE - INTERVAL '90 days') SELECT AVG(score) FROM recent;"
+    },
+    {
+      "id": 18,
+      "label": 0,
+      "output": "SELECT * FROM reviews;"
+    },
+    {
+      "id": 19,
+      "label": 1,
+      "output": "WITH t AS (SELECT user_id, COALESCE(amount,0) amount FROM txns) SELECT user_id, SUM(amount) total_amount FROM t GROUP BY user_id HAVING SUM(amount) > 1000;"
+    },
+    {
+      "id": 20,
+      "label": 0,
+      "output": "SELECT user_id, amount FROM txns;"
+    }
+  ]
+}
