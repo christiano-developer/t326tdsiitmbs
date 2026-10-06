@@ -13,3 +13,4 @@
 | [q-get-llm-to-say-yes](q-get-llm-to-say-yes/) | ? | no | solved | reformat-code prompt (40/40 locally) |
 | [q-github-action](q-github-action/) | ? | yes | solved | https://github.com/christiano-developer/t326tdsiitmbs |
 | [q-llm-sentiment-analysis](q-llm-sentiment-analysis/) | ? | no | solved | sentiment.py (exact seeded text, double space) |
+| [q-use-github](q-use-github/) | ? | no | solved | raw URL of email.json (commit-pinned) |
