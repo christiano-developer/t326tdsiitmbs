@@ -17,3 +17,4 @@
 | [q-sort-filter-json](q-sort-filter-json/) | ? | no | solved | 44 items (price ≥ 114.97, cat↑ price↓ name↑) |
 | [q-sql-average-salary](q-sql-average-salary/) | ? | no | solved | GROUP BY department, ROUND(AVG(salary)) |
 | [q-use-devtools](q-use-devtools/) | ? | no | solved | 6dprrqe39p (solved by user in DevTools) |
+| [q-move-rename-files](q-move-rename-files/) | ? | no | solved | 37cb5289…95c6 (tr one-pass rename) |
