@@ -9,3 +9,4 @@
 | [q-calculate-variance](q-calculate-variance/) | ? | no | solved | 130.17 (sample variance, N−1) |
 | [q-crawl-html](q-crawl-html/) | ? | no | solved | 38 (A–K, from grader table) |
 | [q-css-selectors-sum](q-css-selectors-sum/) | ? | no | solved | 293 (8 items, .featured.sale in hidden list) |
+| [q-dbt-operations-dashboard](q-dbt-operations-dashboard/) | ? | no | solved | int_returns_daily.sql (single-line `as date` filter) |
