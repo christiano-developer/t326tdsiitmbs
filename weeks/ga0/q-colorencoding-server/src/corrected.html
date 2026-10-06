@@ -1,0 +1,65 @@
+<!--
+Mismatch: the original chart used a single-hue light-to-dark orange (sequential) ramp on unordered
+categories. That sequential ramp falsely implies traffic sources have a natural progression or hierarchy:
+a viewer reads Organic (lightest) as "least" and Email (darkest) as "most", a false hierarchy among sources
+that contradicts the bar heights (Organic is actually the largest at 85k, Email the smallest at 18k).
+Correct scheme: categorical (qualitative). Traffic sources are nominal groups with no inherent order, so
+each needs a distinct hue of similar visual weight that encodes identity only, never rank. Bar height
+already carries the quantity.
+Fix: Okabe-Ito colour-blind-safe categorical palette (all pairwise CIEDE2000 distances >= 30).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Traffic by Source</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: white;
+      --text: rgb(33, 37, 41);
+      --subtext: rgb(108, 117, 125);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: rgb(33, 37, 41);
+        --text: rgb(248, 249, 250);
+        --subtext: rgb(173, 181, 189);
+      }
+    }
+    body { font-family: sans-serif; margin: 16px; background: var(--bg); color: var(--text); }
+    h2 { font-size: 1rem; margin-bottom: 4px; }
+    p  { font-size: 0.8rem; color: var(--subtext); margin-bottom: 12px; }
+    canvas { max-height: 280px; }
+  </style>
+</head>
+<body>
+  <h2>Website Traffic by Source</h2>
+  <p>Monthly visits (thousands) by traffic source: Organic, Paid, Social, Direct, Email</p>
+  <canvas id="chart"></canvas>
+  <p>Colour scheme: categorical. Each traffic source gets a distinct hue with no implied order.</p>
+  <script>
+    // FIXED: categorical palette (Okabe-Ito) for unordered categories
+    const colors = ["#0072b2","#d55e00","#009e73","#cc79a7","#f0e442"];
+    new Chart(document.getElementById('chart'), {
+      type: 'bar',
+      data: {
+        labels: ["Organic","Paid","Social","Direct","Email"],
+        datasets: [{
+          label: 'Website Traffic by Source',
+          data: [85,42,33,67,18],
+          backgroundColor: colors,
+          borderColor: colors,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>

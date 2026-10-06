@@ -1,0 +1,16 @@
+# GA0 q-github-action: a workflow whose step name contains the exam email.
+# The email comes from the repository variable EXAM_EMAIL so it isn't committed to the repo.
+# Docs: weeks/ga0/q-github-action/
+name: GA0 email step
+
+on:
+  push:
+    branches: [ga0]
+  workflow_dispatch:
+
+jobs:
+  ga0-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ${{ vars.EXAM_EMAIL }}
+        run: echo "Hello, world!"

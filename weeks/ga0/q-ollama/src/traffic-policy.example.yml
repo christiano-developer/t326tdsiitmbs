@@ -1,0 +1,11 @@
+# ngrok traffic policy for q-ollama (replaces the deprecated --response-header-add flags, which split values on commas).
+# Copy to traffic-policy.local.yml (git-ignored), put your exam email in X-Email, then:
+#   ngrok http 11434 --traffic-policy-file traffic-policy.local.yml
+on_http_response:
+  - actions:
+      - type: add-headers
+        config:
+          headers:
+            X-Email: "<my-exam-email>"
+            Access-Control-Expose-Headers: "*"
+            Access-Control-Allow-Headers: "Authorization,Content-Type,User-Agent,Accept,Ngrok-skip-browser-warning"

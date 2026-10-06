@@ -1,0 +1,25 @@
+<!-- Quantification: 9.4x. Exaggeration ratio = max / (max - axis min) = 924.2 / (924.2 - 825.62) = 9.4.
+Distortion: the truncated y-axis inflates tiny deltas by 9.4x.
+Manipulation: truncated y-axis; scales.y.min was hard-set just below the data with beginAtZero false.
+Fix: set the y-axis to min: 0 so it starts at zero.
+Insight: With a zero baseline the Revenue Index shows a steady, modest ~5% rise over eight months, not the dramatic quarterly uplift the truncated axis implied. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What does this chart claim to show? Quarterly uplift is dramatic</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; }
+    canvas { max-height: 340px; }
+  </style>
+</head>
+<body>
+  <h3>What does this chart claim to show? Quarterly uplift is dramatic</h3>
+  <canvas id="chart"></canvas>
+  <script>
+    new Chart(document.getElementById('chart'), {"type":"line","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"],"datasets":[{"label":"Revenue Index","data":[878.32,881.79,893.89,900.98,904.68,909.63,915.66,924.2],"borderColor":"#2563eb","backgroundColor":"rgba(37, 99, 235, 0.15)","tension":0.3}]},"options":{"responsive":true,"plugins":{"title":{"display":true,"text":"What does this chart claim to show? Quarterly uplift is dramatic"}},"scales":{"y":{min: 0,"beginAtZero":true}}}});
+  </script>
+</body>
+</html>
