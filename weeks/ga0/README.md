@@ -18,3 +18,4 @@
 | [q-sql-average-salary](q-sql-average-salary/) | ? | no | solved | GROUP BY department, ROUND(AVG(salary)) |
 | [q-use-devtools](q-use-devtools/) | ? | no | solved | 6dprrqe39p (solved by user in DevTools) |
 | [q-move-rename-files](q-move-rename-files/) | ? | no | solved | 37cb5289…95c6 (tr one-pass rename) |
+| [q-unicode-data](q-unicode-data/) | ? | no | solved | 40909 (€ ˆ ” across cp1252/utf-8/utf-16) |
