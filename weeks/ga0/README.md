@@ -16,3 +16,4 @@
 | [q-use-github](q-use-github/) | ? | no | solved | raw URL of email.json (commit-pinned) |
 | [q-sort-filter-json](q-sort-filter-json/) | ? | no | solved | 44 items (price ≥ 114.97, cat↑ price↓ name↑) |
 | [q-sql-average-salary](q-sql-average-salary/) | ? | no | solved | GROUP BY department, ROUND(AVG(salary)) |
+| [q-use-devtools](q-use-devtools/) | ? | no | solved | 6dprrqe39p (solved by user in DevTools) |
