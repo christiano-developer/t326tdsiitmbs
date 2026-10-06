@@ -1,0 +1,6 @@
+# Local-only files: never upload to Vercel
+.env*
+.gitkeep
+test_api.py
+__pycache__/
+browser_check.html
