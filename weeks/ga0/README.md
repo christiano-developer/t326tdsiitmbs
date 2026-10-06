@@ -23,3 +23,4 @@
 | [q-image-grayscale-rebuild](q-image-grayscale-rebuild/) | ? | no | solved | reconstructed-grayscale.png (submit from Chrome, not Brave) |
 | [q-code-interpreter-ai-analysis](q-code-interpreter-ai-analysis/) | ? | yes | solved | https://tds-ga0-code-interpreter.vercel.app (Vercel, hybrid line analysis) |
 | [q-fastapi](q-fastapi/) | ? | yes | solved | https://tds-ga0-fastapi.vercel.app/api |
+| [q-fastapi-sentiment-batch](q-fastapi-sentiment-batch/) | ? | yes | solved | https://tds-ga0-sentiment.vercel.app/sentiment (lexicon 99/99) |
