@@ -12,3 +12,4 @@
 | [q-dbt-operations-dashboard](q-dbt-operations-dashboard/) | ? | no | solved | int_returns_daily.sql (single-line `as date` filter) |
 | [q-get-llm-to-say-yes](q-get-llm-to-say-yes/) | ? | no | solved | reformat-code prompt (40/40 locally) |
 | [q-github-action](q-github-action/) | ? | yes | solved | https://github.com/christiano-developer/t326tdsiitmbs |
+| [q-llm-sentiment-analysis](q-llm-sentiment-analysis/) | ? | no | solved | sentiment.py (exact seeded text, double space) |
