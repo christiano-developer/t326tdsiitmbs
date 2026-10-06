@@ -26,14 +26,14 @@ npx vercel login
 ## 2. Git workflow
 
 ```bash
-# Start a section branch from main (first time)
-git switch main && git pull && git switch -c ga0
+# Start a section branch from init (first time) - sections never start from main
+git switch init && git pull && git switch -c ga1
 
 # Resume an existing section branch
 git switch ga0
 
 # Revisit a section that is already merged
-git switch main && git switch -c ga0-revisit
+git switch -c ga0-revisit init
 ```
 
 ### Author check (once per machine)
@@ -100,14 +100,16 @@ git merge --no-ff ga0-revisit -m "merge(ga0-revisit): <summary>"
 git tag -a ga0/revisit-1 -m "merge(ga0-revisit): <summary>"
 ```
 
-### Sync main into a section branch (after a `setup:` commit)
+### Sync init into main and open section branches (after a `setup:` commit on init)
 
 ```bash
-# Merge (never rebase) so pushed commits and their tags stay intact; n = 1, 2, ...
+# 1) main picks up the setup change
+git switch main && git merge --no-ff init -m "merge(init): <setup tag>"
+# 2) each open section branch: merge (never rebase) so pushed commits and their tags stay intact; n = 1, 2, ...
 git switch ga0
-git merge --no-ff main -m "sync(ga0): merge main (setup/<name>)" \
+git merge --no-ff init -m "sync(ga0): merge init (setup/<name>)" \
   -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
-git tag -a ga0/sync-1 -m "sync(ga0): merge main (setup/<name>)"
+git tag -a ga0/sync-1 -m "sync(ga0): merge init (setup/<name>)"
 git push origin ga0 --follow-tags
 ```
 
@@ -186,6 +188,17 @@ ollama pull <model> && ollama serve
 
 ---
 
+### Headless Chrome (render / screenshot a local HTML page)
+
+```bash
+# Screenshot a local HTML file (waits up to 5s for JS like Chart.js to draw)
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
+  --window-size=1000,450 --virtual-time-budget=5000 \
+  --screenshot="$PWD/out.png" "file://$PWD/page.html"
+```
+
+---
+
 ## 5. One-liners
 
 ```bash
@@ -194,4 +207,15 @@ jq '.' file.json
 
 # Fetch a URL and show only headers
 curl -sI <url>
+```
+
+### Exam submissions
+
+```bash
+# Copy a submission file to the clipboard (never copy from terminal output — wrapping mangles it)
+pbcopy < weeks/ga0/<q-id>/src/<file>
+
+# Download the GA quiz JS to read grader logic (hacking is allowed in TDS)
+curl -sL https://exam.sanand.workers.dev/exam-tds-2026-09-ga0.js -o /tmp/ga0.js
+grep -o 'outside tolerance' /tmp/ga0.js   # then read the surrounding check function
 ```
