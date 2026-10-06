@@ -20,3 +20,4 @@
 | [q-move-rename-files](q-move-rename-files/) | ? | no | solved | 37cb5289…95c6 (tr one-pass rename) |
 | [q-unicode-data](q-unicode-data/) | ? | no | solved | 40909 (€ ˆ ” across cp1252/utf-8/utf-16) |
 | [q-replace-across-files](q-replace-across-files/) | ? | no | solved | 16bd7ac6…26ef (perl -pi /iitm/gi) |
+| [q-image-grayscale-rebuild](q-image-grayscale-rebuild/) | ? | no | solved | reconstructed-grayscale.png (submit from Chrome, not Brave) |
