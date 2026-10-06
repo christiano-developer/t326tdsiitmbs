@@ -25,3 +25,4 @@
 | [q-fastapi](q-fastapi/) | ? | yes | solved | https://<your-project>.vercel.app/api |
 | [q-fastapi-sentiment-batch](q-fastapi-sentiment-batch/) | ? | yes | solved | https://<your-project>.vercel.app/sentiment (lexicon 99/99) |
 | [q-ollama](q-ollama/) | ? | yes | solved | ngrok URL (Ollama + --host-header=rewrite) |
+| [q-vercel-latency](q-vercel-latency/) | ? | yes | solved | https://<your-project>.vercel.app/ (expose ACAO) |
