@@ -24,3 +24,4 @@
 | [q-code-interpreter-ai-analysis](q-code-interpreter-ai-analysis/) | ? | yes | solved | https://<your-project>.vercel.app (Vercel, hybrid line analysis) |
 | [q-fastapi](q-fastapi/) | ? | yes | solved | https://<your-project>.vercel.app/api |
 | [q-fastapi-sentiment-batch](q-fastapi-sentiment-batch/) | ? | yes | solved | https://<your-project>.vercel.app/sentiment (lexicon 99/99) |
+| [q-ollama](q-ollama/) | ? | yes | solved | ngrok URL (Ollama + --host-header=rewrite) |
