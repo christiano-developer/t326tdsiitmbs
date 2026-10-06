@@ -8,3 +8,4 @@
 | [q-colorencoding-server](q-colorencoding-server/) | ? | no | solved | Okabe-Ito categorical, min dE00 37.0, no other hexes (attempt 1) |
 | [q-calculate-variance](q-calculate-variance/) | ? | no | solved | 130.17 (sample variance, N−1) |
 | [q-crawl-html](q-crawl-html/) | ? | no | solved | 38 (A–K, from grader table) |
+| [q-css-selectors-sum](q-css-selectors-sum/) | ? | no | solved | 293 (8 items, .featured.sale in hidden list) |
