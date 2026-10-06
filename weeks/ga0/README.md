@@ -21,3 +21,4 @@
 | [q-unicode-data](q-unicode-data/) | ? | no | solved | 40909 (€ ˆ ” across cp1252/utf-8/utf-16) |
 | [q-replace-across-files](q-replace-across-files/) | ? | no | solved | 16bd7ac6…26ef (perl -pi /iitm/gi) |
 | [q-image-grayscale-rebuild](q-image-grayscale-rebuild/) | ? | no | solved | reconstructed-grayscale.png (submit from Chrome, not Brave) |
+| [q-code-interpreter-ai-analysis](q-code-interpreter-ai-analysis/) | ? | yes | solved | https://tds-ga0-code-interpreter.vercel.app (Vercel, hybrid line analysis) |

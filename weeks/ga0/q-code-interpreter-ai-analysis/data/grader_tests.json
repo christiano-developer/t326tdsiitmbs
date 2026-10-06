@@ -1,0 +1,482 @@
+[
+ {
+  "id": 1,
+  "code": "x = 5\ny = 10\nresult = x + y\nprint(result)",
+  "hasError": false,
+  "expectedOutput": "15\n",
+  "errorLines": []
+ },
+ {
+  "id": 2,
+  "code": "numbers = [1, 2, 3, 4, 5]\ntotal = sum(numbers)\nprint(f'Sum: {total}')",
+  "hasError": false,
+  "expectedOutput": "Sum: 15\n",
+  "errorLines": []
+ },
+ {
+  "id": 3,
+  "code": "def greet(name):\n    return f'Hello, {name}!'\n\nmessage = greet('Alice')\nprint(message)",
+  "hasError": false,
+  "expectedOutput": "Hello, Alice!\n",
+  "errorLines": []
+ },
+ {
+  "id": 4,
+  "code": "for i in range(3):\n    print(i * 2)",
+  "hasError": false,
+  "expectedOutput": "0\n2\n4\n",
+  "errorLines": []
+ },
+ {
+  "id": 5,
+  "code": "data = {'name': 'John', 'age': 30}\nprint(data['name'])\nprint(data['age'])",
+  "hasError": false,
+  "expectedOutput": "John\n30\n",
+  "errorLines": []
+ },
+ {
+  "id": 6,
+  "code": "text = 'hello world'\nprint(text.upper())\nprint(len(text))",
+  "hasError": false,
+  "expectedOutput": "HELLO WORLD\n11\n",
+  "errorLines": []
+ },
+ {
+  "id": 7,
+  "code": "import math\nresult = math.sqrt(16)\nprint(int(result))",
+  "hasError": false,
+  "expectedOutput": "4\n",
+  "errorLines": []
+ },
+ {
+  "id": 8,
+  "code": "numbers = [x**2 for x in range(5)]\nprint(numbers)",
+  "hasError": false,
+  "expectedOutput": "[0, 1, 4, 9, 16]\n",
+  "errorLines": []
+ },
+ {
+  "id": 9,
+  "code": "a, b = 10, 20\na, b = b, a\nprint(f'a={a}, b={b}')",
+  "hasError": false,
+  "expectedOutput": "a=20, b=10\n",
+  "errorLines": []
+ },
+ {
+  "id": 10,
+  "code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)\n\nprint(factorial(5))",
+  "hasError": false,
+  "expectedOutput": "120\n",
+  "errorLines": []
+ },
+ {
+  "id": 21,
+  "code": "text = 'Python'\nprint(text[:3])\nprint(text[3:])",
+  "hasError": false,
+  "expectedOutput": "Pyt\nhon\n",
+  "errorLines": []
+ },
+ {
+  "id": 22,
+  "code": "x = True\ny = False\nprint(x and y)\nprint(x or y)",
+  "hasError": false,
+  "expectedOutput": "False\nTrue\n",
+  "errorLines": []
+ },
+ {
+  "id": 23,
+  "code": "words = ['hello', 'world']\nresult = ' '.join(words)\nprint(result)",
+  "hasError": false,
+  "expectedOutput": "hello world\n",
+  "errorLines": []
+ },
+ {
+  "id": 24,
+  "code": "x = -7.8\nprint(abs(x))\nprint(round(x))",
+  "hasError": false,
+  "expectedOutput": "7.8\n-8\n",
+  "errorLines": []
+ },
+ {
+  "id": 25,
+  "code": "nums = [3, 1, 4, 1, 5]\nprint(sorted(nums))",
+  "hasError": false,
+  "expectedOutput": "[1, 1, 3, 4, 5]\n",
+  "errorLines": []
+ },
+ {
+  "id": 26,
+  "code": "items = ['a', 'b', 'c']\nfor i, v in enumerate(items):\n    print(i, v)",
+  "hasError": false,
+  "expectedOutput": "0 a\n1 b\n2 c\n",
+  "errorLines": []
+ },
+ {
+  "id": 27,
+  "code": "d = {'x': 1, 'y': 2}\nprint(list(d.keys()))\nprint(list(d.values()))",
+  "hasError": false,
+  "expectedOutput": "['x', 'y']\n[1, 2]\n",
+  "errorLines": []
+ },
+ {
+  "id": 28,
+  "code": "sentence = 'one two three'\nparts = sentence.split()\nprint(len(parts))\nprint(parts[1])",
+  "hasError": false,
+  "expectedOutput": "3\ntwo\n",
+  "errorLines": []
+ },
+ {
+  "id": 29,
+  "code": "nums = [4, 7, 2, 9, 1]\nprint(min(nums))\nprint(max(nums))",
+  "hasError": false,
+  "expectedOutput": "1\n9\n",
+  "errorLines": []
+ },
+ {
+  "id": 30,
+  "code": "i = 3\nwhile i > 0:\n    print(i)\n    i -= 1",
+  "hasError": false,
+  "expectedOutput": "3\n2\n1\n",
+  "errorLines": []
+ },
+ {
+  "id": 31,
+  "code": "point = (3, 4)\nx, y = point\nprint(x + y)",
+  "hasError": false,
+  "expectedOutput": "7\n",
+  "errorLines": []
+ },
+ {
+  "id": 32,
+  "code": "text = 'foo bar foo'\nresult = text.replace('foo', 'baz')\nprint(result)",
+  "hasError": false,
+  "expectedOutput": "baz bar baz\n",
+  "errorLines": []
+ },
+ {
+  "id": 33,
+  "code": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(sorted(a & b))\nprint(sorted(a | b))",
+  "hasError": false,
+  "expectedOutput": "[2, 3]\n[1, 2, 3, 4]\n",
+  "errorLines": []
+ },
+ {
+  "id": 34,
+  "code": "result = list(range(0, 10, 3))\nprint(result)",
+  "hasError": false,
+  "expectedOutput": "[0, 3, 6, 9]\n",
+  "errorLines": []
+ },
+ {
+  "id": 35,
+  "code": "s = 'hello.py'\nprint(s.startswith('hello'))\nprint(s.endswith('.py'))",
+  "hasError": false,
+  "expectedOutput": "True\nTrue\n",
+  "errorLines": []
+ },
+ {
+  "id": 36,
+  "code": "matrix = [[1, 2], [3, 4], [5, 6]]\nprint(matrix[1][0])\nprint(matrix[2][1])",
+  "hasError": false,
+  "expectedOutput": "3\n6\n",
+  "errorLines": []
+ },
+ {
+  "id": 37,
+  "code": "x = 42\nprint(isinstance(x, int))\nprint(isinstance(x, str))",
+  "hasError": false,
+  "expectedOutput": "True\nFalse\n",
+  "errorLines": []
+ },
+ {
+  "id": 38,
+  "code": "keys = ['a', 'b', 'c']\nvals = [1, 2, 3]\nd = dict(zip(keys, vals))\nprint(d)",
+  "hasError": false,
+  "expectedOutput": "{'a': 1, 'b': 2, 'c': 3}\n",
+  "errorLines": []
+ },
+ {
+  "id": 39,
+  "code": "x = 17\nprint(x // 5)\nprint(x % 5)",
+  "hasError": false,
+  "expectedOutput": "3\n2\n",
+  "errorLines": []
+ },
+ {
+  "id": 40,
+  "code": "lst = [1, 2, 3]\nlst.append(4)\nlst.pop(0)\nprint(lst)",
+  "hasError": false,
+  "expectedOutput": "[2, 3, 4]\n",
+  "errorLines": []
+ },
+ {
+  "id": 11,
+  "code": "x = 10\ny = 0\nresult = x / y\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "ZeroDivisionError"
+ },
+ {
+  "id": 12,
+  "code": "numbers = [1, 2, 3]\nprint(numbers[0])\nprint(numbers[5])",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "IndexError"
+ },
+ {
+  "id": 13,
+  "code": "data = {'name': 'Alice'}\nprint(data['name'])\nprint(data['age'])",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "KeyError"
+ },
+ {
+  "id": 14,
+  "code": "x = '10'\ny = 5\nresult = x + y\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 15,
+  "code": "def divide(a, b):\n    return a / b\n\nresult = divide(10, 0)\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "ZeroDivisionError"
+ },
+ {
+  "id": 16,
+  "code": "import non_existent_module\nx = 10\nprint(x)",
+  "hasError": true,
+  "errorLines": [
+   1
+  ],
+  "errorType": "ModuleNotFoundError"
+ },
+ {
+  "id": 17,
+  "code": "numbers = [1, 2, 3]\nfor i in range(5):\n    print(numbers[i])",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "IndexError"
+ },
+ {
+  "id": 18,
+  "code": "text = None\nprint(text.upper())",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "AttributeError"
+ },
+ {
+  "id": 19,
+  "code": "x = 10\ny = '5'\nif x > y:\n    print('Greater')",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 20,
+  "code": "def process():\n    x = 10\n    print(y)\n\nprocess()",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "NameError"
+ },
+ {
+  "id": 41,
+  "code": "x = 5\nif x > 3\n    print('yes')",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "SyntaxError"
+ },
+ {
+  "id": 42,
+  "code": "x = 10\nresult = x(5)\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 43,
+  "code": "s = 'abc'\nx = int(s)\nprint(x)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "ValueError"
+ },
+ {
+  "id": 44,
+  "code": "x = 5\nx.append(10)\nprint(x)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "AttributeError"
+ },
+ {
+  "id": 45,
+  "code": "print(result)\nresult = 42",
+  "hasError": true,
+  "errorLines": [
+   1
+  ],
+  "errorType": "NameError"
+ },
+ {
+  "id": 46,
+  "code": "lst = []\nprint(lst[0])",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "IndexError"
+ },
+ {
+  "id": 47,
+  "code": "def recurse():\n    return recurse()\n\nrecurse()",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "RecursionError"
+ },
+ {
+  "id": 48,
+  "code": "x = None\ny = x + 1\nprint(y)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 49,
+  "code": "d = {'outer': {'inner': 1}}\nprint(d['outer']['missing'])",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "KeyError"
+ },
+ {
+  "id": 50,
+  "code": "x = 10\ny = 0\nprint(x % y)",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "ZeroDivisionError"
+ },
+ {
+  "id": 51,
+  "code": "x = 42\nprint(len(x))",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 52,
+  "code": "lst = [1, 2, 3]\nprint(lst.keys())",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "AttributeError"
+ },
+ {
+  "id": 53,
+  "code": "lst = [1, 2, 3]\nlst.remove(99)\nprint(lst)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "ValueError"
+ },
+ {
+  "id": 54,
+  "code": "a = 'hello'\nb = 'world'\nprint(a * b)",
+  "hasError": true,
+  "errorLines": [
+   3
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 55,
+  "code": "from fake_library import something\nprint(something)",
+  "hasError": true,
+  "errorLines": [
+   1
+  ],
+  "errorType": "ModuleNotFoundError"
+ },
+ {
+  "id": 56,
+  "code": "def foo():\n    print(z)\n    z = 5\n\nfoo()",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "UnboundLocalError"
+ },
+ {
+  "id": 57,
+  "code": "lst = [10, 20, 30]\nprint(lst[-10])",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "IndexError"
+ },
+ {
+  "id": 58,
+  "code": "def add(a, b):\n    return a + b\n\nresult = add(1, 2, 3)\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   4
+  ],
+  "errorType": "TypeError"
+ },
+ {
+  "id": 59,
+  "code": "import math\nresult = math.sqrt(-1)\nprint(result)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "ValueError"
+ },
+ {
+  "id": 60,
+  "code": "t = (3, 1, 2)\nt.sort()\nprint(t)",
+  "hasError": true,
+  "errorLines": [
+   2
+  ],
+  "errorType": "AttributeError"
+ }
+]
