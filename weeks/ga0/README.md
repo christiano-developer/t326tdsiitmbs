@@ -7,3 +7,4 @@
 | [q-bug-hunter-property-based-testing](q-bug-hunter-property-based-testing/) | ? | no | solved | case-pair sampled_from + exact-dedupe contract (attempt 2) |
 | [q-colorencoding-server](q-colorencoding-server/) | ? | no | solved | Okabe-Ito categorical, min dE00 37.0, no other hexes (attempt 1) |
 | [q-calculate-variance](q-calculate-variance/) | ? | no | solved | 130.17 (sample variance, N−1) |
+| [q-crawl-html](q-crawl-html/) | ? | no | solved | 38 (A–K, from grader table) |
