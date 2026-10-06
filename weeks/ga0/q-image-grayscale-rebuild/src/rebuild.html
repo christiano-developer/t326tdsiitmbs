@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Rebuilds the grayscale image with the GA0 grader's exact browser logic (canvas drawImage + getImageData,
+     gray = Math.round(.2126*R + .7152*G + .0722*B), alpha kept). Serve this folder over http and open it;
+     the PNG data URL is written into <pre id="out">. -->
+<html><body><pre id="out">working</pre><script type="module">
+const wo = await fetch("../data/mapping.json").then(r => r.json());
+const n = await createImageBitmap(await fetch("../data/jigsaw.webp").then(r => r.blob()));
+const l = 5, s = n.width / l, a = n.height / l;
+const c1 = document.createElement("canvas"); c1.width = n.width; c1.height = n.height;
+const u = c1.getContext("2d");
+Object.entries(wo).forEach(([h, g]) => {
+  const [f, y] = h.split(",").map(Number), [w, b] = g.split(",").map(Number);
+  u.drawImage(n, y * s, f * a, s, a, b * s, w * a, s, a);   // scrambled (row f, col y) -> original (row w, col b)
+});
+const img = u.getImageData(0, 0, c1.width, c1.height), d = img.data;
+for (let h = 0; h < d.length; h += 4) {
+  const v = Math.round(.2126 * d[h] + .7152 * d[h + 1] + .0722 * d[h + 2]);
+  d[h] = d[h + 1] = d[h + 2] = v;                               // alpha d[h+3] unchanged
+}
+u.putImageData(img, 0, 0);
+document.getElementById("out").textContent = c1.toDataURL("image/png");
+</script></body></html>

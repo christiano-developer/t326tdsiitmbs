@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!-- Real-browser replica of the grader: cross-origin fetch, then read access-control-allow-origin from JS.
+     Open via http://127.0.0.1:<port>/browser_check.html?url=<endpoint> in (headless) Chrome. -->
+<html><body><pre id="out">working</pre><script type="module">
+const out = document.getElementById("out");
+try {
+  const url = new URLSearchParams(location.search).get("url");
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ regions: ["apac", "amer"], threshold_ms: 174 }) });
+  const acao = r.headers.get("access-control-allow-origin"), body = await r.json();
+  out.textContent = `RESULT ok=${r.ok} acao=${JSON.stringify(acao)} regions=${JSON.stringify(body.regions)}`;
+} catch (e) { out.textContent = "RESULT error " + e; }
+</script></body></html>
