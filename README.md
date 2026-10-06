@@ -106,27 +106,42 @@ Before solving, **inspect the question and its grader**, not just the visible te
 
 ## 4. Branches
 
-| Section | Branch |
-|---------|--------|
-| GA0 … GA8 | `ga0` … `ga8` |
-| Project 1 / 2 | `project-p1`, `project-p2` |
-| ROE | `roe` |
-| Revisit a closed section | `<branch>-revisit`, e.g. `ga0-revisit` |
+| Branch | Holds | Starts from | Merges into |
+|--------|-------|-------------|-------------|
+| **`init`** | the **workflow only** (README, CMDS, templates, scripts, .gitignore): the standalone starter | n/a | `main` (setup changes only) |
+| `ga0` … `ga8` | one GA each | **`init`** | `main`, when complete |
+| `project-p1`, `project-p2` | one project each | **`init`** | `main`, when complete |
+| `roe` | the ROE | **`init`** | `main`, when complete |
+| `<branch>-revisit`, e.g. `ga0-revisit` | late fixes to a merged section | `init` (or the section's merge commit) | `main` |
+| **`main`** | everything: `init` + every completed section | n/a | n/a |
 
-- Branch from `main`.
-- Merge into `main` **only when the section is complete**, using `git merge --no-ff` so per-question commits stay visible.
-- A section is **complete** when every question has status `solved`, `set-aside` or `cant-approach`.
-- **No direct commits to `main`**, except repo-level files (`README.md`, `CMDS.md`, `templates/`, `scripts/`, `.gitignore`).
+- **Sections are independent.** Every section branch starts from `init`, never from `main`, so a GA branch contains
+  only the workflow plus that GA. Nothing from other GAs leaks in, and anyone can start fresh from `init`.
+- **`init` never receives section content.** Only repo-level `setup:` changes are committed there.
+- Merge a section into `main` **only when it's complete**, using `git merge --no-ff` so per-question commits stay visible.
+- A section is **complete** when every question has status `solved`, `set-aside` or `cant-approach`, or the user
+  explicitly excludes the rest (excluded questions simply stay uncommitted).
+- **No direct commits to `main`** except merge commits (sections, and `init` for setup changes).
 
-### Syncing repo-level changes into a section branch
+### Syncing repo-level changes
 
-Repo-level changes are committed on `main` as `setup:` commits. To bring them into an open section branch:
+Repo-level changes are committed on **`init`** as `setup:` commits, then:
 
-- **Merge, never rebase, once the branch has commits.** Rebasing rewrites already-pushed commits and leaves
-  their tags pointing at the old copies (it happened once and had to be undone). Rebase is only safe on a
-  branch with no commits of its own yet.
-- Run `git merge --no-ff main` on the section branch → one **`sync`** commit, tagged `<section>/sync-<n>`.
-- Sync right after each `setup:` commit, so agents working on the branch always see the current rules.
+1. **into `main`:** `git switch main && git merge --no-ff init` (or fast-forward if `main` has nothing else new).
+2. **into each open section branch:** `git merge --no-ff init` on that branch → one **`sync`** commit, tagged
+   `<section>/sync-<n>`. Never merge `main` into a section branch, because that would pull in other sections.
+
+- **Merge, never rebase, once a branch has commits.** Rebasing rewrites already-pushed commits and leaves their tags
+  pointing at the old copies (it happened once and had to be undone).
+- Sync right after each `setup:` commit, so agents working on a branch always see the current rules.
+
+### Starting fresh from `init`
+
+```bash
+git switch init && git pull
+git switch -c ga1          # or project-p1, roe, …
+# the section's folder (weeks/ga1/, projects/p1/, roe/) is created by scripts/new-question.sh
+```
 
 ---
 
@@ -159,7 +174,7 @@ Non-question commits (the only exceptions to one-commit-per-question):
 | Type | Where | Message format |
 |------|-------|----------------|
 | `setup` | `main` | `setup: <repo-level change>` |
-| `sync` | section branch (merge commit) | `sync(<section>): merge main (<setup tag>)` |
+| `sync` | section branch (merge commit) | `sync(<section>): merge init (<setup tag>)` |
 | `merge` | `main` (merge commit) | `merge(<section>): section complete` |
 
 ### Authorship
@@ -221,7 +236,7 @@ Every section merge also gets a tag.
 
 ## 7. Workflow per question
 
-1. **Branch**: `git switch <section-branch>`, creating it from `main` if new.
+1. **Branch**: `git switch <section-branch>`, creating it from **`init`** if new (`git switch -c ga1 init`).
 2. **Scaffold**: `scripts/new-question.sh <section> <q-id> [--deploy] [--marks N]`
 3. **Capture**: paste the question into `README.md` and set Status to `in-progress`.
 4. **Inspect**: read the grader, flag distractors and scan for hidden text, then record it in `approaches.md` (§3.4).
