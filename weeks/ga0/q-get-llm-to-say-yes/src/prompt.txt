@@ -1,0 +1,5 @@
+Reformat this Python code to use 4-space indentation. Output only the code, unchanged otherwise:
+def answer(x):
+  if x:
+    return 'Yes'
+  return 'No'
