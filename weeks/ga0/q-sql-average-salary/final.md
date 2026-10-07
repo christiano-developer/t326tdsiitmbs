@@ -45,4 +45,4 @@ PASS
 
 ## Answer submitted (✅ passed, attempt 1)
 
-[src/average_salary.sql](src/average_salary.sql).
+[src/average_salary.sql](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-sql-average-salary/src/average_salary.sql).

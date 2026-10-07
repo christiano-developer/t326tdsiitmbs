@@ -9,7 +9,7 @@
 Needs Node.js (for `npx`) and a free Vercel account.
 
 1. Create an empty folder `latency-app`. Download the telemetry JSON from the question into it and rename it `telemetry.json`.
-2. Add `main.py` (copy [src/main.py](src/main.py) as-is) and `requirements.txt` with two lines, `fastapi` and `pydantic`. Don't add `vercel.json`.
+2. Add `main.py` (copy [src/main.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-vercel-latency/src/main.py) as-is) and `requirements.txt` with two lines, `fastapi` and `pydantic`. Don't add `vercel.json`.
 3. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
 4. Test it (should return per-region numbers):
    ```bash
@@ -33,7 +33,7 @@ idx=(n-1)*0.95, 2dp), avg_uptime (mean, 3dp), breaches (count latency_ms > N)}]}
 
 ## Reproduction steps
 
-See [deploy.md](deploy.md): copy the JSON to `src/telemetry.json` → local check → `npx vercel --prod` → live check → submit.
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-vercel-latency/deploy.md): copy the JSON to `src/telemetry.json` → local check → `npx vercel --prod` → live check → submit.
 
 ## Expected output
 

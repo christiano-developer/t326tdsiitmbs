@@ -74,4 +74,4 @@ PASS
 
 ## Answer submitted (✅ passed, attempt 1)
 
-[src/corrected.html](src/corrected.html), copied with `pbcopy`.
+[src/corrected.html](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/src/corrected.html), copied with `pbcopy`.

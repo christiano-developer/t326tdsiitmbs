@@ -108,7 +108,7 @@ PASS canvas + new Chart( + <script
 
 ## Answer submitted (✅ passed, attempt 3)
 
-Full file: [src/corrected.html](src/corrected.html). Header comment and fixed config:
+Full file: [src/corrected.html](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/src/corrected.html). Header comment and fixed config:
 
 ```html
 <!-- Quantification: 9.4x. Exaggeration ratio = max / (max - axis min) = 924.2 / (924.2 - 825.62) = 9.4.
