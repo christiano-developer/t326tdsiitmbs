@@ -2,6 +2,23 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, and your JSON differs, so deploy your own copy.
+
+Needs Node.js (for `npx`) and a free Vercel account.
+
+1. Create an empty folder `latency-app`. Download the telemetry JSON from the question into it and rename it `telemetry.json`.
+2. Add `main.py` (copy [src/main.py](src/main.py) as-is) and `requirements.txt` with two lines, `fastapi` and `pydantic`. Don't add `vercel.json`.
+3. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
+4. Test it (should return per-region numbers):
+   ```bash
+   curl -s -X POST https://<project>.vercel.app/ -H "Content-Type: application/json" -d '{"regions":["apac"],"threshold_ms":180}'
+   ```
+5. Submit `https://<project>.vercel.app/`, then Check and Save.
+
+`main.py` sets `expose_headers=["Access-Control-Allow-Origin"]`. Without it, the browser grader can't read the CORS header and fails.
+
 ## Final prompt
 
 ```text

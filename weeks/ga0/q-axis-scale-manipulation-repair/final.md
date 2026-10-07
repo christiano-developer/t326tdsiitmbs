@@ -2,6 +2,29 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+Covers the truncated-axis variant (`scales.y.min` set just below the data).
+
+1. Copy the chart HTML from the question into a file `corrected.html`.
+2. Note the axis min (the number after `"min":` in `scales.y`) and the largest data value.
+3. Compute `d = max / (max - min)`, rounded to 1 decimal. Example: `924.2 / (924.2 - 825.62) = 9.4`.
+4. Replace the whole `"scales":{...}` part with exactly this (keep `min: 0` unquoted):
+   ```js
+   "scales":{"y":{min: 0,"beginAtZero":true}}
+   ```
+5. Paste this comment as the very first lines of the file, filling in `<d>`, `<max>`, `<min>`. The first number in the comment must be `d`:
+   ```html
+   <!-- Quantification: <d>x. Exaggeration ratio = max / (max - axis min) = <max> / (<max> - <min>) = <d>.
+   Distortion: the truncated y-axis inflates tiny deltas by <d>x.
+   Manipulation: truncated y-axis; scales.y.min was hard-set just below the data with beginAtZero false.
+   Fix: set the y-axis to min: 0 so it starts at zero.
+   Insight: <one sentence on what the zero-based chart shows that the broken one hid> -->
+   ```
+6. Copy the whole file (from the editor, not a terminal), paste it into the answer box, then Check and Save.
+
 ## Final prompt
 
 Works in one pass in any capable LLM. Replace `<HTML>` and `<DATA>` with your variant

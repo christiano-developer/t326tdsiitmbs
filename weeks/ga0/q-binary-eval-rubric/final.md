@@ -3,6 +3,23 @@
 > Goal: the answer can be reproduced from this file alone.
 > Status: ✅ passed on the first submission (2026-10-06).
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Note your topic and the number of checks N from the question.
+2. Write N YES/NO questions, one per line, each ending in `?` and at least 24 characters long. Good examples should get YES and poor ones NO. Use concrete features (keywords, constructs), nothing subjective.
+3. If your topic is SQL query quality with 5 checks, these passed:
+   ```text
+   Does the query use a WITH clause (common table expression) to define an intermediate result before the final SELECT?
+   Does the query explicitly handle NULL values, for example with COALESCE, IFNULL, or CASE WHEN ... IS NULL?
+   Does the query use an aggregate function such as SUM, COUNT, AVG, MIN, or MAX to summarize rows?
+   Does the query compute or transform at least one value (via a function or expression) instead of only returning stored columns as-is?
+   Does the query assign an alias to at least one computed column or expression, such as SUM(amount) AS total or COALESCE(x, 0) x?
+   ```
+   For another topic: the labelled examples are in `https://exam.sanand.workers.dev/exam-tds-2026-09-ga0.js` (search `hiddenExamples`). Paste them into the prompt under "Final prompt" in any LLM.
+4. Paste the checks, click Check, enter your AIPipe token when asked, then Save. You need at least 4 checks to pass.
+
 ## Final prompt
 
 Works in one pass in any capable LLM, given the extracted examples. Replace `<EXAMPLES_JSON>` with the

@@ -2,6 +2,23 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, but the same app works for everyone.
+
+Needs Node.js (for `npx`) and a free Vercel account.
+
+1. Create an empty folder `sentiment-app` with these files and no `vercel.json`:
+   - `main.py`: copy [src/main.py](src/main.py) as-is.
+   - `sentiment.py`: copy [src/sentiment.py](src/sentiment.py) as-is.
+   - `requirements.txt`: two lines, `fastapi` and `pydantic`.
+2. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
+3. Test it (should return `"sentiment":"happy"`):
+   ```bash
+   curl -s -X POST https://<project>.vercel.app/sentiment -H "Content-Type: application/json" -d '{"sentences":["I love this"]}'
+   ```
+4. Submit `https://<project>.vercel.app/sentiment`, then Check and Save.
+
 ## Final prompt
 
 ```text

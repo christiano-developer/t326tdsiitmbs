@@ -2,6 +2,22 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Open your TDS folder for this GA (create `TDS/GA0` if you don't have one) and open a terminal in it.
+2. Copy the JSON array from the question into a file `products.json`. Note your price threshold.
+3. Create `sort.py`, set `THRESHOLD`, and run `python3 sort.py`:
+   ```python
+   import json
+   THRESHOLD = 114.97   # yours from the question
+   items = [p for p in json.load(open("products.json")) if p["price"] >= THRESHOLD]
+   items.sort(key=lambda p: (p["category"], -p["price"], p["name"]))
+   print(json.dumps(items, separators=(",", ":")))
+   ```
+4. It prints one line of minified JSON. Copy all of it into the answer box, then Check and Save.
+
 ## Final prompt
 
 ```text

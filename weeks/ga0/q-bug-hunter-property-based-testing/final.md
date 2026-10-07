@@ -2,6 +2,31 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Read your variant: the function name, its contract, and the hint about failing inputs.
+2. If your function is `dedupe_topics` (keep first occurrence of exact duplicates, case-sensitive), paste this as-is:
+   ```python
+   from hypothesis import given, strategies as st
+
+   CASE_PAIRS = ["a", "A", "b", "B", "x", "X", "Topic", "topic"]
+
+
+   @given(st.lists(st.sampled_from(CASE_PAIRS), max_size=8))
+   def test_dedupe_removes_only_exact_duplicates(items):
+       result = dedupe_topics(items)
+       expected = []
+       for item in items:
+           if item not in expected:
+               expected.append(item)
+       assert result == expected
+   ```
+   For any other function, paste your variant into the prompt under "Final prompt" in any LLM.
+3. Rules: don't import the function; avoid f-strings and keep lines short, because long lines get wrapped when pasted and break.
+4. Click Check, then Save. A pass means the test fails on the buggy code and passes on the correct code.
+
 ## Final prompt
 
 Works in one pass for any of the 20 seeded variants. Replace the bracketed parts with your variant's text.

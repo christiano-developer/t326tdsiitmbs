@@ -2,6 +2,24 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+Needs a bash shell (Mac/Linux terminal, or Git Bash/WSL on Windows).
+
+1. Open your TDS folder for this GA (create `TDS/GA0` if you don't have one) and open a terminal in it.
+2. Download `q-move-rename-files.zip` into it, then run these lines one by one:
+   ```bash
+   unzip q-move-rename-files.zip -d extracted
+   mkdir flat && mv extracted/q-move-rename-files/*/* flat/ && cd flat
+   for f in *; do n=$(echo "$f" | tr '0-9' '1-90'); [ "$f" != "$n" ] && mv -- "$f" "$n"; done
+   grep . * | LC_ALL=C sort | sha256sum
+   ```
+3. The last line prints a 64-character hash followed by ` -`. Enter only the hash, then Check and Save.
+
+If `sha256sum` is missing on a Mac, use `shasum -a 256` instead.
+
 ## Final prompt
 
 ```text
