@@ -2,6 +2,17 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. On the exam page, open DevTools (Ctrl+Shift+I; Mac: Cmd+Opt+I) and click the **Console** tab.
+2. Paste this and press Enter (use the selector from your question if it differs):
+   ```js
+   [...document.querySelectorAll('ul.products li.featured.sale')].reduce((t, e) => t + Number(e.dataset.discount), 0)
+   ```
+3. It prints one integer (ours was `293`). Enter it, then Check and Save.
+
 ## Final prompt
 
 ```text

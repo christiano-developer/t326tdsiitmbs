@@ -2,6 +2,18 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+Use **Google Chrome**. Brave adds noise to canvas pixels and every upload fails.
+
+1. Open the exam page in Chrome. Open DevTools (Ctrl+Shift+I; Mac: Cmd+Opt+I) and click **Console**.
+2. Copy [src/console_snippet.js](src/console_snippet.js) into a text editor. Replace the `wo = {...}` mapping with the mapping from your question (format `"row,col": "row,col"`).
+3. Paste the edited snippet into the Console and press Enter.
+4. It should print `round-trip mismatched bytes: 0 OK` and `attached to upload field`. It also downloads a copy of the PNG.
+5. Click Check, then Save. If the attach didn't work, upload the downloaded PNG manually.
+
 ## Final prompt
 
 ```text

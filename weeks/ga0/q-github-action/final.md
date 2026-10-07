@@ -2,6 +2,34 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so use your own email and repo.
+
+Needs a GitHub account, a public repo cloned on your machine, and the `gh` CLI (`gh auth login`).
+
+1. In the repo folder, store your email as a repo variable:
+   ```bash
+   gh variable set EXAM_EMAIL --body "you@example.com"
+   ```
+2. Create `.github/workflows/ga0-email-step.yml` with this content (change `main` to your branch):
+   ```yaml
+   name: GA0 email step
+   on:
+     push:
+       branches: [main]
+     workflow_dispatch:
+   jobs:
+     ga0-email:
+       runs-on: ubuntu-latest
+       steps:
+         - name: ${{ vars.EXAM_EMAIL }}
+           run: echo "Hello, world!"
+   ```
+3. Commit and push: `git add .github && git commit -m "add workflow" && git push`.
+4. On GitHub, open the **Actions** tab. Wait for a green run whose step is named with your email.
+5. Submit `https://github.com/<your-user>/<your-repo>`, then Check and Save.
+
 ## Final prompt
 
 ```text

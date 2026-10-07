@@ -2,6 +2,18 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, and your CSV differs, so deploy your own copy.
+
+Needs Node.js (for `npx`) and a free Vercel account.
+
+1. Create an empty folder `fastapi-app`. Download the CSV from the question into it and rename it `students.csv`.
+2. Add `main.py` (copy [src/main.py](src/main.py) as-is) and `requirements.txt` containing `fastapi`. Don't add `vercel.json`.
+3. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
+4. Test by opening `https://<project>.vercel.app/api?class=<some class from the CSV>` in a browser. You should see `{"students":[...]}`.
+5. Submit `https://<project>.vercel.app/api`, then Check and Save.
+
 ## Final prompt
 
 ```text

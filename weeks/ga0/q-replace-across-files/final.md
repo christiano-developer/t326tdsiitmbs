@@ -2,6 +2,22 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+Needs a bash shell (Mac/Linux terminal, or Git Bash/WSL on Windows).
+
+1. Open your TDS folder for this GA (create `TDS/GA0` if you don't have one) and open a terminal in it.
+2. Download `q-replace-across-files.zip` into it, then run:
+   ```bash
+   mkdir new && cd new && unzip ../q-replace-across-files.zip
+   perl -pi -e 's/iitm/IIT Madras/gi' *
+   cat * | sha256sum
+   ```
+   If the zip contains a sub-folder, `cd` into it before the `perl` line. Use `perl`, not Mac's `sed -i`, which changes line endings.
+3. Enter only the 64-character hash, then Check and Save.
+
 ## Final prompt
 
 ```text

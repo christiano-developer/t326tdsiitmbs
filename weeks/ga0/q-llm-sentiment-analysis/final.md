@@ -2,6 +2,14 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Copy [src/sentiment.py](src/sentiment.py) into a text editor.
+2. Replace the `TEXT = "..."` value with the exact text from your question. Keep every space, including double spaces.
+3. Paste the code into the answer box, then Check and Save. Nothing needs to be run.
+
 ## Final prompt
 
 ```text
