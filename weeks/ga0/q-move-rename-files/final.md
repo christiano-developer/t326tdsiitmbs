@@ -1,6 +1,7 @@
 # Final — q-move-rename-files
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-move-rename-files](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-move-rename-files)
 
 ## How to solve (for a teammate)
 

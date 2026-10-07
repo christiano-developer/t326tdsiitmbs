@@ -1,6 +1,7 @@
 # Final — q-ollama
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-ollama](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-ollama)
 
 ## How to solve (for a teammate)
 

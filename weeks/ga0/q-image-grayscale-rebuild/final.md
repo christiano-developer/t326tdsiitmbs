@@ -1,6 +1,7 @@
 # Final — q-image-grayscale-rebuild
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-image-grayscale-rebuild](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-image-grayscale-rebuild)
 
 ## How to solve (for a teammate)
 
@@ -36,7 +37,7 @@ kill %1
 python3 src/verify.py      # independent check
 ```
 
-Upload `data/reconstructed-grayscale.png` **from Google Chrome** (Brave's canvas noise makes any upload fail).
+Upload [`data/reconstructed-grayscale.png`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-image-grayscale-rebuild/data/reconstructed-grayscale.png) **from Google Chrome** (Brave's canvas noise makes any upload fail).
 
 ## Expected output
 

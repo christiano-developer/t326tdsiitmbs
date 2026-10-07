@@ -1,6 +1,7 @@
 # Final — q-axis-scale-manipulation-repair
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-axis-scale-manipulation-repair](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-axis-scale-manipulation-repair)
 
 ## How to solve (for a teammate)
 
@@ -28,7 +29,7 @@ Covers the truncated-axis variant (`scales.y.min` set just below the data).
 ## Final prompt
 
 Works in one pass in any capable LLM. Replace `<HTML>` and `<DATA>` with your variant
-(values are email-seeded). This prompt covers type A (truncated axis). For other types, see the grader table in approaches.md.
+(values are email-seeded). This prompt covers type A (truncated axis). For other types, see the grader table in [approaches.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/approaches.md).
 
 ```text
 You are fixing a deceptive Chart.js chart for an auto-grader. Below are the chart HTML and its data.
@@ -54,11 +55,11 @@ Output only the final HTML.
 ```
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader rules read from `exam-tds-2026-09-ga0.js`;
-  validated with `src/check.py`.
+  validated with [`src/check.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/src/check.py).
 
 ## Reproduction steps
 
-1. Copy the chart HTML from the exam page into `data/original.html` and the data table into `data/data.csv`.
+1. Copy the chart HTML from the exam page into [`data/original.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/data/original.html) and the data table into [`data/data.csv`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/data/data.csv).
 2. Compute the distortion value (replace `d` and `mn` with your variant's data and `scales.y.min`):
 
 ```bash
@@ -70,7 +71,7 @@ print(f"distortion {round(mx / (mx - mn), 1)} | visible span {mx-mn:.2f} of {mx}
 EOF
 ```
 
-3. Copy `data/original.html` → `src/corrected.html`. Replace
+3. Copy [`data/original.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/data/original.html) → [`src/corrected.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/src/corrected.html). Replace
    `"scales":{"y":{"min":825.62,"beginAtZero":false}}` with `"scales":{"y":{min: 0,"beginAtZero":true}}`.
 4. Add the comment (below) as the first lines, with the distortion as its first number.
 5. Validate locally with the grader replica. All 7 checks must pass:
@@ -122,4 +123,4 @@ Insight: With a zero baseline the Revenue Index shows a steady, modest ~5% rise 
 "scales":{"y":{min: 0,"beginAtZero":true}}
 ```
 
-> History: attempts 1–2 were rejected because the comment's first number was 825.62 (see approaches.md → Attempts).
+> History: attempts 1–2 were rejected because the comment's first number was 825.62 (see [approaches.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/approaches.md) → Attempts).
