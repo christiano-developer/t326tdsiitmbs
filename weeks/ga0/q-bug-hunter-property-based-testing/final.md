@@ -1,6 +1,7 @@
 # Final — q-bug-hunter-property-based-testing
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-bug-hunter-property-based-testing](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-bug-hunter-property-based-testing)
 
 ## How to solve (for a teammate)
 
@@ -58,13 +59,13 @@ Output only the code.
 ```
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader + shim read from `exam-tds-2026-09-ga0.js`;
-  verified with `src/run_grader.py`.
+  verified with [`src/run_grader.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/src/run_grader.py).
 
 ## Reproduction steps
 
-1. Copy the variant's buggy/reference code into `data/variant.py`, and the shim (`Ra` string in the quiz JS)
-   into `data/hypothesis_shim.py` (both already saved for `dedupe-3`).
-2. Write the test into `src/test_dedupe.py` (below).
+1. Copy the variant's buggy/reference code into [`data/variant.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/data/variant.py), and the shim (`Ra` string in the quiz JS)
+   into [`data/hypothesis_shim.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/data/hypothesis_shim.py) (both already saved for `dedupe-3`).
+2. Write the test into [`src/test_dedupe.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/src/test_dedupe.py) (below).
 3. Run the replica (no dependencies, no real Hypothesis needed):
 
 ```bash
@@ -85,4 +86,4 @@ PASS: property fails on buggy code and passes on the reference implementation
 
 [src/test_dedupe.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/src/test_dedupe.py), copied with `pbcopy`.
 
-> History: attempt 1 hit a setup error because a long f-string was wrapped while pasting (see approaches.md → Gotchas).
+> History: attempt 1 hit a setup error because a long f-string was wrapped while pasting (see [approaches.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/approaches.md) → Gotchas).

@@ -1,6 +1,7 @@
 # Final — q-replace-across-files
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-replace-across-files](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-replace-across-files)
 
 ## How to solve (for a teammate)
 

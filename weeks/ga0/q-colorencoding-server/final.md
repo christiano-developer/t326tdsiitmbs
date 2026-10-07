@@ -1,6 +1,7 @@
 # Final — q-colorencoding-server
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-colorencoding-server](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-colorencoding-server)
 
 ## How to solve (for a teammate)
 
@@ -23,7 +24,7 @@ Covers the categorical variant (unordered labels).
 ## Final prompt
 
 Works in one pass for the categorical variants (unordered labels). For sequential or diverging variants, see
-the grader rules in approaches.md.
+the grader rules in [approaches.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/approaches.md).
 
 ```text
 Fix this Chart.js chart's colour encoding for an auto-grader.
@@ -45,12 +46,12 @@ Keep data, labels and layout unchanged. Output only the HTML.
 ```
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader read from `exam-tds-2026-09-ga0.js`, palette
-  verified with `src/check.py`.
+  verified with [`src/check.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/src/check.py).
 
 ## Reproduction steps
 
-1. Save the broken HTML as `data/original.html`.
-2. Write `src/corrected.html`:
+1. Save the broken HTML as [`data/original.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/data/original.html).
+2. Write [`src/corrected.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/src/corrected.html):
    - replace the `colors` array with `["#0072b2","#d55e00","#009e73","#cc79a7","#f0e442"]`
    - rewrite the 5 CSS hexes: `#ffffff`→`white`, `#212529`→`rgb(33, 37, 41)`, `#6c757d`→`rgb(108, 117, 125)`,
      `#f8f9fa`→`rgb(248, 249, 250)`, `#adb5bd`→`rgb(173, 181, 189)`
@@ -61,7 +62,7 @@ Keep data, labels and layout unchanged. Output only the HTML.
 python3 src/check.py src/corrected.html categorical
 ```
 
-4. Optional render: see CMDS.md → Headless Chrome.
+4. Optional render: see [CMDS.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/CMDS.md) → Headless Chrome.
 5. Copy **from the file**: `pbcopy < src/corrected.html`, then Check and Save.
 
 ## Expected output

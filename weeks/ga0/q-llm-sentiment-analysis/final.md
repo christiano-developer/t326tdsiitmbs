@@ -1,6 +1,7 @@
 # Final — q-llm-sentiment-analysis
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-llm-sentiment-analysis](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-llm-sentiment-analysis)
 
 ## How to solve (for a teammate)
 
@@ -25,7 +26,7 @@ sentiment as GOOD, BAD, or NEUTRAL, user message = <EXACT_TEXT>]. Keep the user 
 ## Reproduction steps
 
 1. Get the exact text: `node src/regenerate_text.mjs <exam-email>` (needs `npm i seedrandom@3`), or copy it carefully.
-2. Put it in `TEXT` in `src/sentiment.py`.
+2. Put it in `TEXT` in [`src/sentiment.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-llm-sentiment-analysis/src/sentiment.py).
 3. Validate offline (no cost): `python3 src/check.py`.
 4. `pbcopy < src/sentiment.py`, then paste, Check and Save.
 

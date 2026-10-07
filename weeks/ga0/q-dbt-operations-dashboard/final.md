@@ -1,6 +1,7 @@
 # Final — q-dbt-operations-dashboard
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-dbt-operations-dashboard](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-dbt-operations-dashboard)
 
 ## How to solve (for a teammate)
 
@@ -34,7 +35,7 @@ Output only the SQL.
 
 ## Reproduction steps
 
-1. Write the model to `src/int_returns_daily.sql`.
+1. Write the model to [`src/int_returns_daily.sql`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-dbt-operations-dashboard/src/int_returns_daily.sql).
 2. Validate: `python3 src/check.py src/int_returns_daily.sql` (all PASS).
 3. Copy **from the file**: `pbcopy < src/int_returns_daily.sql`, then paste, Check and Save.
 
