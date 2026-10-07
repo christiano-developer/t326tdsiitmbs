@@ -9,7 +9,9 @@
      - Full copy-paste code inline (link a repo file only if it's long), plus the exact command to run.
      - Say what the output looks like and which part is the answer ("prints one integer like 38").
      - Note if values are seeded per email (answers differ), and any browser/OS gotcha.
-     - No padding. Verify every step yourself before writing it here. -->
+     - No padding. Verify every step yourself before writing it here.
+     - Links: absolute GitHub URLs (https://github.com/<owner>/<repo>/blob/main/<path>),
+       never relative, so they work when this file is pasted elsewhere. -->
 
 1.
 
