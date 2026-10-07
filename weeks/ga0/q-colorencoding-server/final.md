@@ -2,6 +2,24 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+Covers the categorical variant (unordered labels).
+
+1. Copy the broken chart HTML from the question into `corrected.html`.
+2. Replace the bar colours array with:
+   ```js
+   ["#0072b2","#d55e00","#009e73","#cc79a7","#f0e442"]
+   ```
+3. Replace every other hex colour in the file (CSS, text, comments) with `rgb(...)` or a colour name. Example: `#ffffff` becomes `white` and `#212529` becomes `rgb(33, 37, 41)`. The grader reads every hex in the file, so only the 5 bar colours may remain.
+4. Add this comment as the first line:
+   ```html
+   <!-- Scheme: categorical. The sequential light-to-dark ramp falsely implies traffic sources have a natural progression (a false hierarchy); unordered categories need distinct categorical hues. -->
+   ```
+5. Paste the whole file into the answer box, then Check and Save.
+
 ## Final prompt
 
 Works in one pass for the categorical variants (unordered labels). For sequential or diverging variants, see

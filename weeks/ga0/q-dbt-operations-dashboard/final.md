@@ -2,6 +2,17 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, but any SQL meeting the checks passes.
+
+1. Copy [src/int_returns_daily.sql](src/int_returns_daily.sql) and paste it into the answer box.
+2. If your business or metric differs, paste the prompt under "Final prompt" into any LLM with your names. The SQL must have:
+   - `{{ config(` and `{{ ref('...') }}`
+   - a `with` CTE, `coalesce`, and `date_trunc('day', ...)`
+   - the 14-day filter on one line, for example `where cast(returned_at as date) >= dateadd('day', -14, current_date)`
+3. Click Check, then Save.
+
 ## Final prompt
 
 ```text

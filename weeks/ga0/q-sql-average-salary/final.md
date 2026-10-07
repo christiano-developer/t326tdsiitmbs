@@ -2,6 +2,19 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, but this query works for everyone.
+
+1. Paste this query into the answer box:
+   ```sql
+   SELECT department, ROUND(AVG(salary)) AS avg_salary
+   FROM employees
+   GROUP BY department
+   ORDER BY department;
+   ```
+2. Click Check, then Save.
+
 ## Final prompt
 
 ```text

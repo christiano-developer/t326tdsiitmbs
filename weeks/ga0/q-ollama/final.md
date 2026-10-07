@@ -2,6 +2,34 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so use your own email and ngrok URL.
+
+Needs Ollama, plus ngrok with a free account (`ngrok config add-authtoken <token>` once).
+
+1. Terminal 1: start Ollama with browser access allowed, and leave it running:
+   ```bash
+   OLLAMA_ORIGINS="*" ollama serve
+   ```
+2. Create `traffic-policy.yml` with your email in it:
+   ```yaml
+   on_http_response:
+     - actions:
+         - type: add-headers
+           config:
+             headers:
+               X-Email: "you@example.com"
+               Access-Control-Expose-Headers: "*"
+               Access-Control-Allow-Headers: "Authorization,Content-Type,User-Agent,Accept,Ngrok-skip-browser-warning"
+   ```
+3. Terminal 2, in the same folder (leave it running):
+   ```bash
+   ngrok http 11434 --host-header=rewrite --traffic-policy-file traffic-policy.yml
+   ```
+4. Copy the `https://...ngrok-free.dev` URL shown next to **Forwarding**. Test with `curl -s -H "ngrok-skip-browser-warning: 1" <url>/api/version`, which should print `{"version":"..."}`.
+5. Submit that URL, then Check and Save. Keep both terminals running until it's graded.
+
 ## Final prompt
 
 ```text

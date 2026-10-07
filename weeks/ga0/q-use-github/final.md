@@ -2,6 +2,23 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so use your own email and repo.
+
+Needs a GitHub account and a public repo cloned on your machine.
+
+1. In the repo folder, create `email.json` and push it:
+   ```bash
+   printf '{"email": "you@example.com"}\n' > email.json
+   git add email.json && git commit -m "add email.json" && git push
+   ```
+2. Build the raw URL pinned to that commit:
+   ```bash
+   echo "https://raw.githubusercontent.com/<your-user>/<your-repo>/$(git rev-parse HEAD)/email.json"
+   ```
+3. Open the URL in a browser. It should show your JSON. Submit it, then Check and Save.
+
 ## Final prompt
 
 ```text
