@@ -54,7 +54,7 @@ Every section folder has a `README.md` tracking table:
 | `README.md` | question text, marks, status, final answer, status notes |
 | `prompts.md` | append-only log of every prompt, with its result |
 | `approaches.md` | options considered, choice + reason, gotchas, verification |
-| `final.md` | **single consolidated prompt + reproduction steps + expected output** |
+| `final.md` | **teammate how-to (literal steps + copy-paste code) + consolidated prompt + reproduction steps + expected output** |
 | `deploy.md` | *deploy/server/external-config questions only*: local run → test → deploy → dashboard config → verify → keep-alive → teardown |
 | `.env.example` | *deploy only*: env var **names**; values live in git-ignored `.env` |
 | `src/`, `data/` | code; inputs and outputs |
@@ -244,7 +244,7 @@ Every section merge also gets a tag.
 6. **Iterate**: log every prompt and its result in `prompts.md`.
 7. **Deploy** *(if needed)*: fill `deploy.md` as you go, including dashboard-only settings.
 8. **Verify**: exam "Check" button, curl, or a hand-worked sample. Record it in `approaches.md`.
-9. **Consolidate**: write `final.md` so the answer can be reproduced in one pass.
+9. **Consolidate**: write `final.md` so the answer can be reproduced in one pass, starting with "How to solve (for a teammate)": literal steps a reader with no context can follow.
 10. **Close**: set the final Status, fill the answer or status notes, and update the section table.
 11. **Commit**: one commit using the matching type, authored by the GitHub user, with a `Co-Authored-By` trailer for every LLM/agent used (§5).
 12. **Tag**: annotated tag `<section>/<q-id>/<type>` on that commit (§6).
