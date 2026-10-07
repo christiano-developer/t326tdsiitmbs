@@ -7,12 +7,15 @@
 
 <!-- Written for someone with no context: numbered literal steps, nothing skipped.
      - Say where to work ("Open your TDS folder for this GA..."), what to download, which file to create.
-     - Full copy-paste code inline (link a repo file only if it's long), plus the exact command to run.
+     - Standalone: it gets pasted into the course solutions field, so assume NO repo access.
+       Put all code inline (long files in <details><summary>name (click to expand)</summary> blocks),
+       plus the exact command to run.
      - Say what the output looks like and which part is the answer ("prints one integer like 38").
      - Note if values are seeded per email (answers differ), and any browser/OS gotcha.
      - No padding. Verify every step yourself before writing it here.
      - Links: absolute GitHub URLs ({{REPO_URL}}/blob/main/<path>),
-       never relative, so they work when this file is pasted elsewhere. Link file paths mentioned in prose too. -->
+       never relative, so they work when this file is pasted elsewhere. Link file paths mentioned in prose too,
+       but links are extras: no step may depend on opening one. -->
 
 1.
 
@@ -27,7 +30,7 @@
 
 - **Tool / model used:**
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. <!-- prerequisites (uv, gh, accounts, env vars) -->
 2. <!-- commands to run, in order -->
