@@ -31,7 +31,7 @@ chained sed). Then run: grep . * | LC_ALL=C sort | sha256sum
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 unzip q-move-rename-files.zip -d data/extracted

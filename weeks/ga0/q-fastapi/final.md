@@ -10,7 +10,46 @@
 Needs Node.js (for `npx`) and a free Vercel account.
 
 1. Create an empty folder `fastapi-app`. Download the CSV from the question into it and rename it `students.csv`.
-2. Add `main.py` (copy [src/main.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/src/main.py) as-is) and `requirements.txt` containing `fastapi`. Don't add `vercel.json`.
+2. Add `main.py` (copy the code below as-is) and `requirements.txt` containing `fastapi`. Don't add `vercel.json`.
+   <details><summary>main.py (click to expand)</summary>
+
+   ```python
+   """GET /api - serve students from students.csv, optionally filtered by one or more ?class= values.
+
+   - Order: always the CSV row order (filtering scans rows in file order), never the order of the requested classes.
+   - Types: studentId as int, class as str (the grader deep-compares with ===).
+   - CORS: GET allowed from any origin.
+   """
+   import csv
+   from pathlib import Path
+   from typing import List, Optional
+
+   from fastapi import FastAPI, Query
+   from fastapi.middleware.cors import CORSMiddleware
+
+   app = FastAPI()
+   app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET"], allow_headers=["*"])
+
+   CSV_PATH = Path(__file__).resolve().parent / "students.csv"
+   with CSV_PATH.open(newline="", encoding="utf-8") as f:
+       STUDENTS = [{"studentId": int(r["studentId"]), "class": r["class"]} for r in csv.DictReader(f)]
+
+
+   @app.get("/api")
+   def get_students(class_: Optional[List[str]] = Query(None, alias="class")) -> dict:
+       if not class_:
+           return {"students": STUDENTS}
+       wanted = set(class_)
+       return {"students": [s for s in STUDENTS if s["class"] in wanted]}
+
+
+   @app.get("/")
+   def health() -> dict:
+       return {"status": "ok", "endpoint": "GET /api?class=..."}
+   ```
+
+   </details>
+
 3. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
 4. Test by opening `https://<project>.vercel.app/api?class=<some class from the CSV>` in a browser. You should see `{"students":[...]}`.
 5. Submit `https://<project>.vercel.app/api`, then Check and Save.
@@ -25,7 +64,7 @@ List[str] = Query(None, alias="class"), filtering by scanning rows in CSV order.
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/deploy.md): copy the CSV to [`src/students.csv`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/src/students.csv) → local replay → `npx vercel --prod` → live replay → submit.
 

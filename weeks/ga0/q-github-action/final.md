@@ -13,7 +13,7 @@ Needs a GitHub account, a public repo cloned on your machine, and the `gh` CLI (
    ```bash
    gh variable set EXAM_EMAIL --body "you@example.com"
    ```
-2. Create [`.github/workflows/ga0-email-step.yml`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/.github/workflows/ga0-email-step.yml) with this content (change `main` to your branch):
+2. Create `.github/workflows/ga0-email-step.yml` with this content (change `main` to your branch):
    ```yaml
    name: GA0 email step
    on:
@@ -42,7 +42,7 @@ workflow, and check that the most recent run's step names contain the email via 
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 Follow [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-github-action/deploy.md):
 

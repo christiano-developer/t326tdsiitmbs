@@ -57,7 +57,7 @@ Output only the final HTML.
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader rules read from `exam-tds-2026-09-ga0.js`;
   validated with [`src/check.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/src/check.py).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Copy the chart HTML from the exam page into [`data/original.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/data/original.html) and the data table into [`data/data.csv`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-axis-scale-manipulation-repair/data/data.csv).
 2. Compute the distortion value (replace `d` and `mn` with your variant's data and `scales.y.min`):

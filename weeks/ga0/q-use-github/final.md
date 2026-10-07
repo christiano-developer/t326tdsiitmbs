@@ -9,7 +9,7 @@
 
 Needs a GitHub account and a public repo cloned on your machine.
 
-1. In the repo folder, create [`email.json`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-use-github/email.json) and push it:
+1. In the repo folder, create `email.json` and push it:
    ```bash
    printf '{"email": "you@example.com"}\n' > email.json
    git add email.json && git commit -m "add email.json" && git push
@@ -29,7 +29,7 @@ and build the raw.githubusercontent.com URL pinned to the commit SHA. Then a cur
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 printf '{"email": "<exam-email>"}\n' > weeks/ga0/q-use-github/email.json

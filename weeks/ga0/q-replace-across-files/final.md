@@ -28,7 +28,7 @@ without changing line endings or anything else (use perl -pi, not BSD sed), then
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 mkdir new && cd new && unzip ../q-replace-across-files.zip

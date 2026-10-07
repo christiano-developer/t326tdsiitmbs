@@ -24,7 +24,7 @@ elements matching ul.products li.featured.sale, and also prints how many matched
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 Either:
 
