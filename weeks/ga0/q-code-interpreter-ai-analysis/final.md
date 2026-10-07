@@ -9,7 +9,7 @@
 Needs Node.js (for `npx`) and a free Vercel account.
 
 1. Create an empty folder `code-interpreter` with three files and no `vercel.json`:
-   - `api/index.py`: copy [src/api/index.py](src/api/index.py) as-is.
+   - `api/index.py`: copy [src/api/index.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-code-interpreter-ai-analysis/src/api/index.py) as-is.
    - `main.py`: one line, `from api.index import app`.
    - `requirements.txt`: two lines, `fastapi` and `pydantic`.
 2. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
@@ -38,7 +38,7 @@ POST /code-interpreter {code} -> {error: [int], result: str}:
 
 ## Reproduction steps
 
-See [deploy.md](deploy.md): local venv → `src/test_all.py` (60/60) → `npx vercel --prod --yes` → test the deployed URL →
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-code-interpreter-ai-analysis/deploy.md): local venv → `src/test_all.py` (60/60) → `npx vercel --prod --yes` → test the deployed URL →
 submit the base URL.
 
 ## Expected output

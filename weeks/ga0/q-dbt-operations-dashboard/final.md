@@ -6,7 +6,7 @@
 
 > Values are seeded from your email, but any SQL meeting the checks passes.
 
-1. Copy [src/int_returns_daily.sql](src/int_returns_daily.sql) and paste it into the answer box.
+1. Copy [src/int_returns_daily.sql](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-dbt-operations-dashboard/src/int_returns_daily.sql) and paste it into the answer box.
 2. If your business or metric differs, paste the prompt under "Final prompt" into any LLM with your names. The SQL must have:
    - `{{ config(` and `{{ ref('...') }}`
    - a `with` CTE, `coalesce`, and `date_trunc('day', ...)`
@@ -56,4 +56,4 @@ PASS {{ config(
 
 ## Answer submitted (✅ passed, attempt 1)
 
-[src/int_returns_daily.sql](src/int_returns_daily.sql), copied with `pbcopy`.
+[src/int_returns_daily.sql](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-dbt-operations-dashboard/src/int_returns_daily.sql), copied with `pbcopy`.

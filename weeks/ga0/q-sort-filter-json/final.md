@@ -42,4 +42,4 @@ pbcopy < data/answer.min.json
 
 ## Answer submitted (✅ passed, attempt 1)
 
-[data/answer.min.json](data/answer.min.json), copied with `pbcopy`.
+[data/answer.min.json](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-sort-filter-json/data/answer.min.json), copied with `pbcopy`.
