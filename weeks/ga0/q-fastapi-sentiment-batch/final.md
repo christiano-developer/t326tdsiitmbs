@@ -1,6 +1,7 @@
 # Final — q-fastapi-sentiment-batch
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-fastapi-sentiment-batch](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-fastapi-sentiment-batch)
 
 ## How to solve (for a teammate)
 

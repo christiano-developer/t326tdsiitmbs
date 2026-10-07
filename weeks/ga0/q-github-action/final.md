@@ -1,6 +1,7 @@
 # Final — q-github-action
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-github-action](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-github-action)
 
 ## How to solve (for a teammate)
 
@@ -12,7 +13,7 @@ Needs a GitHub account, a public repo cloned on your machine, and the `gh` CLI (
    ```bash
    gh variable set EXAM_EMAIL --body "you@example.com"
    ```
-2. Create `.github/workflows/ga0-email-step.yml` with this content (change `main` to your branch):
+2. Create [`.github/workflows/ga0-email-step.yml`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/.github/workflows/ga0-email-step.yml) with this content (change `main` to your branch):
    ```yaml
    name: GA0 email step
    on:
@@ -46,7 +47,7 @@ workflow, and check that the most recent run's step names contain the email via 
 Follow [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-github-action/deploy.md):
 
 1. `gh variable set EXAM_EMAIL --body "<my-exam-email>"`.
-2. Add `.github/workflows/ga0-email-step.yml` (see `src/ga0-email-step.yml`).
+2. Add [`.github/workflows/ga0-email-step.yml`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/.github/workflows/ga0-email-step.yml) (see [`src/ga0-email-step.yml`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-github-action/src/ga0-email-step.yml)).
 3. Commit and `git push origin ga0`, which triggers the run.
 4. `src/check_latest_run.sh christiano-developer/t326tdsiitmbs "<my-exam-email>"` → PASS.
 5. Submit the repo URL.

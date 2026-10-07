@@ -1,6 +1,7 @@
 # Final — q-fastapi
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-fastapi](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-fastapi)
 
 ## How to solve (for a teammate)
 
@@ -26,7 +27,7 @@ List[str] = Query(None, alias="class"), filtering by scanning rows in CSV order.
 
 ## Reproduction steps
 
-See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/deploy.md): copy the CSV to `src/students.csv` → local replay → `npx vercel --prod` → live replay → submit.
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/deploy.md): copy the CSV to [`src/students.csv`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/src/students.csv) → local replay → `npx vercel --prod` → live replay → submit.
 
 ## Expected output
 

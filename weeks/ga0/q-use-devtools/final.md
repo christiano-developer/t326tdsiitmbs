@@ -1,6 +1,7 @@
 # Final — q-use-devtools
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-use-devtools](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-use-devtools)
 
 ## How to solve (for a teammate)
 
