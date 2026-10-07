@@ -28,7 +28,7 @@ the number of HTML files starting with that letter. Sum the counts for letters <
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Note your letter range on the question page (mine: A–K).
 2. Run:

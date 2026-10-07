@@ -48,7 +48,7 @@ Keep data, labels and layout unchanged. Output only the HTML.
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader read from `exam-tds-2026-09-ga0.js`, palette
   verified with [`src/check.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/src/check.py).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Save the broken HTML as [`data/original.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/data/original.html).
 2. Write [`src/corrected.html`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-colorencoding-server/src/corrected.html):

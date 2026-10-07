@@ -61,7 +61,7 @@ Output only the code.
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Grader + shim read from `exam-tds-2026-09-ga0.js`;
   verified with [`src/run_grader.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/src/run_grader.py).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Copy the variant's buggy/reference code into [`data/variant.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/data/variant.py), and the shim (`Ra` string in the quiz JS)
    into [`data/hypothesis_shim.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/data/hypothesis_shim.py) (both already saved for `dedupe-3`).

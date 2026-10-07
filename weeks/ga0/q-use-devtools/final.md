@@ -22,7 +22,7 @@ None needed. Open DevTools on the exam page and run in the Console:
 $$('input[type=hidden]').map(e => e.value)
 ```
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Cmd+Opt+I → Elements: find the hidden `<input>` above the question paragraph, or use the Console snippet above.
 2. Copy its `value` and submit it.
