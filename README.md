@@ -39,6 +39,9 @@ templates/
   question/                README.md, prompts.md, approaches.md, final.md
   deploy/                  deploy.md, .env.example
 scripts/new-question.sh    scaffolds a question folder from templates/
+scripts/docs-assignments.py  builds docs/assignments.md from the section tables (docs site)
+docs/, mkdocs.yml          docs site → https://christiano-developer.github.io/t326tdsiitmbs/
+                           (built + deployed by .github/workflows/pages.yml on push to main)
 weeks/ga0 … ga8/           one folder per GA (ga0 = GA0)
 projects/p1, p2/           one folder per requirement
 roe/                       one folder per ROE question

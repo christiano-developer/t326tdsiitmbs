@@ -18,3 +18,7 @@ node_modules/
 
 # OS
 .DS_Store
+
+# Docs site (generated)
+site/
+docs/assignments.md
