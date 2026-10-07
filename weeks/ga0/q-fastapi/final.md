@@ -9,7 +9,7 @@
 Needs Node.js (for `npx`) and a free Vercel account.
 
 1. Create an empty folder `fastapi-app`. Download the CSV from the question into it and rename it `students.csv`.
-2. Add `main.py` (copy [src/main.py](src/main.py) as-is) and `requirements.txt` containing `fastapi`. Don't add `vercel.json`.
+2. Add `main.py` (copy [src/main.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/src/main.py) as-is) and `requirements.txt` containing `fastapi`. Don't add `vercel.json`.
 3. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
 4. Test by opening `https://<project>.vercel.app/api?class=<some class from the CSV>` in a browser. You should see `{"students":[...]}`.
 5. Submit `https://<project>.vercel.app/api`, then Check and Save.
@@ -26,7 +26,7 @@ List[str] = Query(None, alias="class"), filtering by scanning rows in CSV order.
 
 ## Reproduction steps
 
-See [deploy.md](deploy.md): copy the CSV to `src/students.csv` → local replay → `npx vercel --prod` → live replay → submit.
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi/deploy.md): copy the CSV to `src/students.csv` → local replay → `npx vercel --prod` → live replay → submit.
 
 ## Expected output
 
