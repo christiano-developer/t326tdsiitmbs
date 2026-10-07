@@ -1,0 +1,46 @@
+# Build the MkDocs docs site and publish it to GitHub Pages on every push to main.
+# Settings → Pages → Source must be "GitHub Actions".
+# The footer email comes from the repository variable EXAM_EMAIL (never committed).
+name: Docs site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Generate assignments page
+        run: python3 scripts/docs-assignments.py
+      - name: Build site
+        env:
+          # email_off: keeps the address unobfuscated if a CDN rewrites emails
+          SITE_FOOTER: >-
+            Contact: <!--email_off--><a href="mailto:${{ vars.EXAM_EMAIL }}">${{ vars.EXAM_EMAIL }}</a><!--/email_off-->
+        run: uvx --from 'mkdocs<2' --with mkdocs-material mkdocs build --strict  # MkDocs 2 drops Material support
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

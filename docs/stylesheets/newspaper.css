@@ -1,0 +1,199 @@
+/* Single "aged newsprint" theme for MkDocs Material: warm paper, soft-black ink, one oxblood accent. */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+
+/* ---------- Palette ---------- */
+:root,
+[data-md-color-scheme="default"] {
+  --paper: #e8e2d4;        /* page: warm, dimmer than white */
+  --paper-deep: #ddd6c4;   /* code, summaries, hover */
+  --ink: #1e1c19;          /* text, header band */
+  --muted: #615b51;        /* secondary text */
+  --rule: rgba(30, 28, 25, 0.18);  /* hairlines */
+  --accent: #8c2a1f;       /* oxblood: links on hover, active page, drop cap */
+
+  --md-primary-fg-color: var(--ink);
+  --md-primary-fg-color--light: var(--muted);
+  --md-primary-fg-color--dark: var(--ink);
+  --md-primary-bg-color: var(--paper);
+  --md-primary-bg-color--light: var(--paper-deep);
+  --md-accent-fg-color: var(--accent);
+  --md-default-bg-color: var(--paper);
+  --md-default-fg-color: var(--ink);
+  --md-default-fg-color--light: var(--muted);
+  --md-default-fg-color--lighter: var(--rule);
+  --md-typeset-color: var(--ink);
+  --md-typeset-a-color: var(--ink);
+  --md-code-bg-color: var(--paper-deep);
+  --md-code-fg-color: var(--ink);
+  --md-footer-bg-color: var(--ink);
+  --md-footer-bg-color--dark: var(--ink);
+  --md-footer-fg-color: var(--paper);
+  --md-footer-fg-color--light: #b9b1a1;
+  --md-mermaid-font-family: "IBM Plex Mono", monospace;
+  --md-mermaid-edge-color: var(--ink);
+  --md-mermaid-node-bg-color: var(--paper-deep);
+  --md-mermaid-node-fg-color: var(--ink);
+  --md-mermaid-label-bg-color: var(--paper);
+  --md-mermaid-label-fg-color: var(--ink);
+}
+body { background: var(--paper); }
+
+/* ---------- Header: ink band, like a nameplate ---------- */
+.md-header { background: var(--ink); color: var(--paper); box-shadow: none; }
+.md-header__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+.md-search__form { background: rgba(232, 226, 212, 0.1); border-radius: 0; }
+.md-search__form:hover { background: rgba(232, 226, 212, 0.18); }
+
+/* ---------- Type ---------- */
+.md-typeset { font-size: 0.86rem; line-height: 1.7; }
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.md-typeset h1 { font-weight: 900; font-size: 2.3rem; margin-bottom: 0.4em; }
+.md-typeset h2 { font-weight: 700; margin-top: 1.8em; }
+.md-typeset a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+.md-typeset a:hover { color: var(--accent); }
+.md-typeset code { border-radius: 0; }
+.md-typeset hr { border-bottom-color: var(--rule); }
+
+/* ---------- Tables (inside collapsible blocks, see newspaper.js) ---------- */
+.md-typeset table:not([class]) {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.8rem;
+  background: transparent;
+}
+.md-typeset table:not([class]) th {
+  background: transparent;
+  border-bottom: 1px solid var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+}
+.md-typeset table:not([class]) td { border-top: 1px solid var(--rule); }
+.md-typeset table:not([class]) tr:hover { background: var(--paper-deep); }
+
+/* Collapsible table block */
+.md-typeset details.np-table {
+  border: none;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  margin: 1em 0;
+}
+.md-typeset details.np-table > summary {
+  background: transparent;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.55em 1.8em 0.55em 0;
+  cursor: pointer;
+}
+.md-typeset details.np-table > summary::before { display: none; }
+.md-typeset details.np-table > summary::after { background-color: var(--ink); }
+.md-typeset details.np-table > summary:hover { color: var(--accent); }
+.md-typeset details.np-table > summary .np-meta { color: var(--muted); margin-left: 0.6em; }
+.md-typeset details.np-table[open] > summary { border-bottom: 1px solid var(--ink); }
+.md-typeset details.np-table > .md-typeset__scrollwrap,
+.md-typeset details.np-table > table { margin: 0.4em 0 0.6em; }
+
+/* ---------- Admonitions, tabs: monochrome ---------- */
+.md-typeset .admonition, .md-typeset details:not(.np-table) {
+  border: none;
+  border-left: 3px solid var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--paper-deep);
+}
+.md-typeset .admonition-title, .md-typeset details:not(.np-table) > summary { background: transparent !important; }
+.md-typeset .admonition-title::before, .md-typeset details:not(.np-table) > summary::before { background-color: var(--ink) !important; }
+.md-typeset .tabbed-labels > label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; }
+.md-typeset .tabbed-labels::before { background: var(--accent); }
+
+/* ---------- Sidebar navigation ---------- */
+.md-nav { font-size: 0.74rem; }
+.md-nav__item--section > .md-nav__link {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+.md-nav__link--active { font-weight: 700; color: var(--accent) !important; }
+.md-nav__link:hover { color: var(--accent) !important; }
+.md-sidebar--secondary .md-nav__title { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.66rem; background: transparent; box-shadow: none; }
+.md-path { font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; text-transform: uppercase; }
+
+/* ---------- Prev / next in the header (always visible, see newspaper.js) ---------- */
+.np-pager { display: flex; gap: 0.2rem; margin: 0 0.4rem; flex-shrink: 0; }
+.np-pager a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 11rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(232, 226, 212, 0.35);
+  color: var(--paper);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.np-pager a span { overflow: hidden; text-overflow: ellipsis; }
+.np-pager a:hover { background: var(--paper); color: var(--ink); }
+.np-pager a[aria-disabled="true"] { opacity: 0.3; pointer-events: none; }
+@media (max-width: 960px) { .np-pager a span { display: none; } }
+
+/* ---------- Footer ---------- */
+.md-footer__title { font-family: "Playfair Display", serif; }
+.md-footer-meta { background: var(--ink); border-top: 1px solid rgba(232, 226, 212, 0.15); }
+.md-footer-meta, .md-footer-meta a { color: #b9b1a1 !important; }
+
+/* ---------- Front page ---------- */
+.masthead { text-align: center; margin-bottom: 1.4rem; }
+.masthead .dateline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.md-typeset .masthead h1 {
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  margin: 0.6rem 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+.masthead .tagline { font-style: italic; color: var(--muted); margin: 0; }
+.md-typeset .lede { font-size: 1.05rem; line-height: 1.6; }
+.md-typeset .lede::first-letter {
+  font-family: "Playfair Display", serif;
+  color: var(--accent);
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
+}
+/* Columns separated by whitespace only, no rules */
+.columns { column-count: 2; column-gap: 3rem; margin-top: 1.2rem; }
+.columns > * { break-inside: avoid; }
+.md-typeset .columns h3 { margin-top: 0; font-size: 1.05rem; }
+@media (max-width: 700px) {
+  .columns { column-count: 1; }
+  .masthead .dateline { flex-direction: column; align-items: center; gap: 0.1rem; }
+}
