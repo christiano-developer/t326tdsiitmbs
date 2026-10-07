@@ -43,7 +43,7 @@ Access-Control-Allow-Headers incl. Ngrok-skip-browser-warning), and the ngrok co
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-ollama/deploy.md): `OLLAMA_ORIGINS="*" ollama serve` → `ngrok http 11434 --host-header=rewrite
 --traffic-policy-file traffic-policy.local.yml` → `src/check_ngrok.sh <url> <email>` → submit the forwarding URL.

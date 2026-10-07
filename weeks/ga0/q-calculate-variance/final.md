@@ -31,7 +31,7 @@ cross-check the sample variance with a manual sum((x-mean)^2)/(n-1).
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Download `q-calculate-variance.json` from the exam page into [`data/`](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-calculate-variance/data) (values are seeded per student).
 2. Run:

@@ -7,7 +7,42 @@
 
 > Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
 
-1. Copy [src/sentiment.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-llm-sentiment-analysis/src/sentiment.py) into a text editor.
+1. Copy the code below into a text editor.
+   <details><summary>sentiment.py (click to expand)</summary>
+
+   ```python
+   import httpx
+
+   # Exact test text (note the DOUBLE space between "qZMGqx7" and "XJHhTji3")
+   TEXT = "U8jxE atNpVd TsBW qZMGqx7  XJHhTji3 D9cZtLdOsqCgM"
+
+   response = httpx.post(
+       "https://api.openai.com/v1/chat/completions",
+       headers={
+           "Authorization": "Bearer dummy-api-key",
+           "Content-Type": "application/json",
+       },
+       json={
+           "model": "gpt-4o-mini",
+           "messages": [
+               {
+                   "role": "system",
+                   "content": (
+                       "Analyze the sentiment of the user's text. "
+                       "Classify it as exactly one of: GOOD, BAD, or NEUTRAL. "
+                       "Reply with only that one word."
+                   ),
+               },
+               {"role": "user", "content": TEXT},
+           ],
+       },
+   )
+   response.raise_for_status()
+   print(response.json()["choices"][0]["message"]["content"])
+   ```
+
+   </details>
+
 2. Replace the `TEXT = "..."` value with the exact text from your question. Keep every space, including double spaces.
 3. Paste the code into the answer box, then Check and Save. Nothing needs to be run.
 
@@ -23,7 +58,7 @@ sentiment as GOOD, BAD, or NEUTRAL, user message = <EXACT_TEXT>]. Keep the user 
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Get the exact text: `node src/regenerate_text.mjs <exam-email>` (needs `npm i seedrandom@3`), or copy it carefully.
 2. Put it in `TEXT` in [`src/sentiment.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-llm-sentiment-analysis/src/sentiment.py).
