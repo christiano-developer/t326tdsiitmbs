@@ -199,6 +199,20 @@ ollama pull <model> && ollama serve
 
 ---
 
+### Docs site (MkDocs Material → GitHub Pages)
+
+```bash
+# Preview locally (assignments page is generated from weeks/*/README.md)
+python3 scripts/docs-assignments.py && uvx --from 'mkdocs<2' --with mkdocs-material mkdocs serve
+
+# Deploys automatically on push to main (Settings → Pages → Source: GitHub Actions); watch the run
+gh run list --workflow pages.yml --limit 3
+gh run watch
+
+# Footer email comes from the repo variable EXAM_EMAIL
+gh variable get EXAM_EMAIL
+```
+
 ## 5. One-liners
 
 ```bash
