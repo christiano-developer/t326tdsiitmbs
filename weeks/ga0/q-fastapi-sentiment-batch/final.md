@@ -9,8 +9,8 @@
 Needs Node.js (for `npx`) and a free Vercel account.
 
 1. Create an empty folder `sentiment-app` with these files and no `vercel.json`:
-   - `main.py`: copy [src/main.py](src/main.py) as-is.
-   - `sentiment.py`: copy [src/sentiment.py](src/sentiment.py) as-is.
+   - `main.py`: copy [src/main.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi-sentiment-batch/src/main.py) as-is.
+   - `sentiment.py`: copy [src/sentiment.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi-sentiment-batch/src/sentiment.py) as-is.
    - `requirements.txt`: two lines, `fastapi` and `pydantic`.
 2. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
 3. Test it (should return `"sentiment":"happy"`):
@@ -32,7 +32,7 @@ words with a one-word negation flip; score > 0 happy, < 0 sad, else neutral.
 
 ## Reproduction steps
 
-See [deploy.md](deploy.md). Check the classifier offline first:
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-fastapi-sentiment-batch/deploy.md). Check the classifier offline first:
 `python3 -c "import json,sys; sys.path.insert(0,'src'); from sentiment import classify; b=json.load(open('data/grader_sentences.json')); print(sum(classify(x['text'])==x['sentiment'] for x in b), '/', len(b))"`
 → `99 / 99`.
 

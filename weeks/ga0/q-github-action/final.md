@@ -43,7 +43,7 @@ workflow, and check that the most recent run's step names contain the email via 
 
 ## Reproduction steps
 
-Follow [deploy.md](deploy.md):
+Follow [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-github-action/deploy.md):
 
 1. `gh variable set EXAM_EMAIL --body "<my-exam-email>"`.
 2. Add `.github/workflows/ga0-email-step.yml` (see `src/ga0-email-step.yml`).

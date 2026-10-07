@@ -6,7 +6,7 @@
 
 > Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
 
-1. Copy [src/sentiment.py](src/sentiment.py) into a text editor.
+1. Copy [src/sentiment.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-llm-sentiment-analysis/src/sentiment.py) into a text editor.
 2. Replace the `TEXT = "..."` value with the exact text from your question. Keep every space, including double spaces.
 3. Paste the code into the answer box, then Check and Save. Nothing needs to be run.
 
@@ -40,4 +40,4 @@ PASS user message == exact text (after trim)
 
 ## Answer submitted (✅ passed, attempt 1)
 
-[src/sentiment.py](src/sentiment.py), copied with `pbcopy`.
+[src/sentiment.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-llm-sentiment-analysis/src/sentiment.py), copied with `pbcopy`.

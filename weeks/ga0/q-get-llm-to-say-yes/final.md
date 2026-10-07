@@ -60,4 +60,4 @@ Local reliability: 40/40.
 
 ## Answer submitted (✅ passed, attempt 1)
 
-The exact contents of [src/prompt.txt](src/prompt.txt).
+The exact contents of [src/prompt.txt](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-get-llm-to-say-yes/src/prompt.txt).

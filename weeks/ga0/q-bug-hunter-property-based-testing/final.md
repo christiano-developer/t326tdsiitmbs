@@ -83,6 +83,6 @@ PASS: property fails on buggy code and passes on the reference implementation
 
 ## Answer submitted (✅ passed, attempt 2)
 
-[src/test_dedupe.py](src/test_dedupe.py), copied with `pbcopy`.
+[src/test_dedupe.py](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-bug-hunter-property-based-testing/src/test_dedupe.py), copied with `pbcopy`.
 
 > History: attempt 1 hit a setup error because a long f-string was wrapped while pasting (see approaches.md → Gotchas).
