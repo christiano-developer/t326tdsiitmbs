@@ -42,10 +42,14 @@ touch "$DIR/src/.gitkeep" "$DIR/data/.gitkeep"
 DEPLOY_LINK=""
 [[ $DEPLOY == yes ]] && DEPLOY_LINK="- [deploy.md](deploy.md) — commands + guide to deploy / boot / configure"
 
+# GitHub web URL of this repo, for absolute links in final.md (works for https and ssh remotes)
+REPO_URL=$(git -C "$ROOT" remote get-url origin 2>/dev/null | sed -E 's#^git@github.com:#https://github.com/#; s#\.git$##')
+[[ -n $REPO_URL ]] || REPO_URL="https://github.com/<owner>/<repo>"
+
 # Fill {{PLACEHOLDERS}} (perl behaves the same on macOS and Linux)
 render() {
-  ID="$ID" SECTION="$SECTION" MARKS="$MARKS" DEPLOY="$DEPLOY" DEPLOY_LINK="$DEPLOY_LINK" \
-    perl -pe 's/\{\{(ID|SECTION|MARKS|DEPLOY|DEPLOY_LINK)\}\}/$ENV{$1}/g' "$1" > "$2"
+  ID="$ID" SECTION="$SECTION" MARKS="$MARKS" DEPLOY="$DEPLOY" DEPLOY_LINK="$DEPLOY_LINK" REPO_URL="$REPO_URL" \
+    perl -pe 's/\{\{(ID|SECTION|MARKS|DEPLOY|DEPLOY_LINK|REPO_URL)\}\}/$ENV{$1}/g' "$1" > "$2"
 }
 
 for f in README.md prompts.md approaches.md final.md; do
