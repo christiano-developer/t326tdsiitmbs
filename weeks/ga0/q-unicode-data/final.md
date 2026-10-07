@@ -34,7 +34,7 @@ characters). Split each line on the first separator only; don't use a CSV quotin
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 unzip q-unicode-data.zip -d data/extracted

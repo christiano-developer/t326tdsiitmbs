@@ -25,7 +25,7 @@ salary rounded to a whole number, one row per department, ordered by department.
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 node src/gen_employees.mjs <exam-email> > data/employees.json   # optional: regenerate the table

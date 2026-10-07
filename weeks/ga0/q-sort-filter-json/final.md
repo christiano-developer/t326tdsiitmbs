@@ -28,7 +28,7 @@ A→Z, then price high→low, then name A→Z, and output the result as minified
 
 - **Tool / model used:** Claude Code (Claude Opus 5.5).
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 ```bash
 python3 src/sort_filter.py 114.97 data/products.json > data/answer.min.json

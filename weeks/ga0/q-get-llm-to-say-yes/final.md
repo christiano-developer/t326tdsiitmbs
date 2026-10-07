@@ -34,7 +34,7 @@ Principle: ask for a mechanical transformation of given text that already contai
 
 - **Tool / model used:** designed and tested with Claude Code (Claude Opus 5.5) against gpt-4o-mini via AIPipe.
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Put an AIPipe token in a git-ignored `.env` (`AIPIPE_TOKEN=...`).
 2. Optional reliability test:

@@ -48,7 +48,7 @@ Output the N checks only, one per line.
 - **Tool / model used:** Claude Code (Claude Opus 5.5). Data and judge config extracted from
   `exam-tds-2026-09-ga0.js`, trait separation scored with python3.
 
-## Reproduction steps
+## Reproduction steps (needs a clone of this repo)
 
 1. Download the quiz JS and extract your variant's examples (see [`CMDS.md`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/CMDS.md) → Exam submissions). The
    extraction for `sql_query_quality` is saved in [`data/hidden_examples.json`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-binary-eval-rubric/data/hidden_examples.json).
