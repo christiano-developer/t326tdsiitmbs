@@ -1,6 +1,7 @@
 # Final — {{ID}}
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [{{SECTION}}/{{ID}}]({{REPO_URL}}/tree/main/{{SECTION}}/{{ID}})
 
 ## How to solve (for a teammate)
 
@@ -10,8 +11,8 @@
      - Say what the output looks like and which part is the answer ("prints one integer like 38").
      - Note if values are seeded per email (answers differ), and any browser/OS gotcha.
      - No padding. Verify every step yourself before writing it here.
-     - Links: absolute GitHub URLs (https://github.com/<owner>/<repo>/blob/main/<path>),
-       never relative, so they work when this file is pasted elsewhere. -->
+     - Links: absolute GitHub URLs ({{REPO_URL}}/blob/main/<path>),
+       never relative, so they work when this file is pasted elsewhere. Link file paths mentioned in prose too. -->
 
 1.
 
