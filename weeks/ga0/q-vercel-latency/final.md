@@ -1,6 +1,7 @@
 # Final — q-vercel-latency
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-vercel-latency](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-vercel-latency)
 
 ## How to solve (for a teammate)
 
@@ -33,7 +34,7 @@ idx=(n-1)*0.95, 2dp), avg_uptime (mean, 3dp), breaches (count latency_ms > N)}]}
 
 ## Reproduction steps
 
-See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-vercel-latency/deploy.md): copy the JSON to `src/telemetry.json` → local check → `npx vercel --prod` → live check → submit.
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-vercel-latency/deploy.md): copy the JSON to [`src/telemetry.json`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-vercel-latency/src/telemetry.json) → local check → `npx vercel --prod` → live check → submit.
 
 ## Expected output
 

@@ -1,6 +1,7 @@
 # Final — q-get-llm-to-say-yes
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-get-llm-to-say-yes](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-get-llm-to-say-yes)
 
 ## How to solve (for a teammate)
 

@@ -1,6 +1,7 @@
 # Final — q-binary-eval-rubric
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-binary-eval-rubric](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-binary-eval-rubric)
 > Status: ✅ passed on the first submission (2026-10-06).
 
 ## How to solve (for a teammate)
@@ -49,9 +50,9 @@ Output the N checks only, one per line.
 
 ## Reproduction steps
 
-1. Download the quiz JS and extract your variant's examples (see `CMDS.md` → Exam submissions). The
-   extraction for `sql_query_quality` is saved in `data/hidden_examples.json`.
-2. Write the checks into `src/rubric.txt` (one per line).
+1. Download the quiz JS and extract your variant's examples (see [`CMDS.md`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/CMDS.md) → Exam submissions). The
+   extraction for `sql_query_quality` is saved in [`data/hidden_examples.json`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-binary-eval-rubric/data/hidden_examples.json).
+2. Write the checks into [`src/rubric.txt`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-binary-eval-rubric/src/rubric.txt) (one per line).
 3. Validate the format (no API calls):
 
 ```bash

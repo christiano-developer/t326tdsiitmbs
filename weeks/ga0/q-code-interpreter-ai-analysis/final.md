@@ -1,6 +1,7 @@
 # Final — q-code-interpreter-ai-analysis
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-code-interpreter-ai-analysis](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-code-interpreter-ai-analysis)
 
 ## How to solve (for a teammate)
 
@@ -38,7 +39,7 @@ POST /code-interpreter {code} -> {error: [int], result: str}:
 
 ## Reproduction steps
 
-See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-code-interpreter-ai-analysis/deploy.md): local venv → `src/test_all.py` (60/60) → `npx vercel --prod --yes` → test the deployed URL →
+See [deploy.md](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-code-interpreter-ai-analysis/deploy.md): local venv → [`src/test_all.py`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-code-interpreter-ai-analysis/src/test_all.py) (60/60) → `npx vercel --prod --yes` → test the deployed URL →
 submit the base URL.
 
 ## Expected output

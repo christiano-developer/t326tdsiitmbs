@@ -1,6 +1,7 @@
 # Final — q-use-github
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-use-github](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-use-github)
 
 ## How to solve (for a teammate)
 
@@ -8,7 +9,7 @@
 
 Needs a GitHub account and a public repo cloned on your machine.
 
-1. In the repo folder, create `email.json` and push it:
+1. In the repo folder, create [`email.json`](https://github.com/christiano-developer/t326tdsiitmbs/blob/main/weeks/ga0/q-use-github/email.json) and push it:
    ```bash
    printf '{"email": "you@example.com"}\n' > email.json
    git add email.json && git commit -m "add email.json" && git push

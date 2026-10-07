@@ -1,6 +1,7 @@
 # Final — q-calculate-variance
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-calculate-variance](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-calculate-variance)
 
 ## How to solve (for a teammate)
 
@@ -32,7 +33,7 @@ cross-check the sample variance with a manual sum((x-mean)^2)/(n-1).
 
 ## Reproduction steps
 
-1. Download `q-calculate-variance.json` from the exam page into `data/` (values are seeded per student).
+1. Download `q-calculate-variance.json` from the exam page into [`data/`](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-calculate-variance/data) (values are seeded per student).
 2. Run:
 
 ```bash

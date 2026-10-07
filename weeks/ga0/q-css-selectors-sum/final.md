@@ -1,6 +1,7 @@
 # Final — q-css-selectors-sum
 
 > Goal: the answer can be reproduced from this file alone.
+> Repo folder: [weeks/ga0/q-css-selectors-sum](https://github.com/christiano-developer/t326tdsiitmbs/tree/main/weeks/ga0/q-css-selectors-sum)
 
 ## How to solve (for a teammate)
 
