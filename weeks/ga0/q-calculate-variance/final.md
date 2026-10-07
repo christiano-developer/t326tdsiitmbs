@@ -2,6 +2,23 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Open your TDS folder for this GA (create `TDS/GA0` if you don't have one) and open a terminal in it.
+2. Download `q-calculate-variance.json` from the question into that folder.
+3. Create `variance.py` with this code:
+   ```python
+   import json, statistics
+   data = json.load(open("q-calculate-variance.json"))
+   print("%.2f" % statistics.variance(data))   # sample variance (n-1), not population
+   ```
+4. Run `python3 variance.py`. It prints one number like `130.17`. That's your answer.
+5. Type it into the box with no spaces, then Check and Save.
+
+Google Sheets alternative: paste the values in column A, then use `=ROUND(VAR.S(A:A), 2)`.
+
 ## Final prompt
 
 ```text

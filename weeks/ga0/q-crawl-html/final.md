@@ -2,6 +2,21 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, so your answer will differ from ours (see "Answer submitted").
+
+1. Note your letter range from the question (for example A to K).
+2. Open your TDS folder for this GA (create `TDS/GA0` if you don't have one) and open a terminal in it. Create `count.py`, set your range on the last line, and run `python3 count.py`:
+   ```python
+   # files per first letter, copied from the grader
+   TN = {"t": 9, "n": 4, "s": 12, "i": 3, "w": 8, "e": 7, "a": 6, "p": 10, "f": 8, "m": 7, "h": 5,
+         "c": 3, "y": 1, "o": 7, "v": 3, "r": 3, "d": 4, "l": 2, "b": 2, "q": 1, "u": 1}
+   start, end = "a", "k"   # your range, lowercase
+   print(sum(v for k, v in TN.items() if start <= k <= end))
+   ```
+3. It prints one integer (ours was `38`). Enter it, then Check and Save.
+
 ## Final prompt
 
 ```text

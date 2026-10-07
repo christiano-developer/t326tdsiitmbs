@@ -2,6 +2,25 @@
 
 > Goal: the answer can be reproduced from this file alone.
 
+## How to solve (for a teammate)
+
+> Values are seeded from your email, but the same app works for everyone (see "Answer submitted").
+
+Needs Node.js (for `npx`) and a free Vercel account.
+
+1. Create an empty folder `code-interpreter` with three files and no `vercel.json`:
+   - `api/index.py`: copy [src/api/index.py](src/api/index.py) as-is.
+   - `main.py`: one line, `from api.index import app`.
+   - `requirements.txt`: two lines, `fastapi` and `pydantic`.
+2. Deploy: in that folder run `npx vercel login` (once), then `npx vercel --prod --yes`. Copy the URL printed after **Aliased:** (`https://<project>.vercel.app`). Don't use the long unique URL: it returns 401.
+3. Test it (should print `{"error":[],"result":"2\n"}`):
+   ```bash
+   curl -s -X POST https://<project>.vercel.app/code-interpreter -H "Content-Type: application/json" -d '{"code":"print(1+1)"}'
+   ```
+4. Submit the base URL `https://<project>.vercel.app`, then Check and Save.
+
+Optional: `npx vercel env add AIPIPE_TOKEN` enables an LLM fallback for unusual errors. It wasn't needed to pass.
+
 ## Final prompt
 
 ```text
