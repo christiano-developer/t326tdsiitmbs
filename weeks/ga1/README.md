@@ -17,4 +17,4 @@
 | [q-termlog-rec-server](q-termlog-rec-server/) | 2 | no | todo | |
 | [q-mcp-server-live-server](q-mcp-server-live-server/) | 3 | yes | todo | |
 | [q-ledger-agent-server](q-ledger-agent-server/) | 4 | yes | todo | |
-| [q-visual-game-tangram](q-visual-game-tangram/) | 2 | no | todo | |
+| [q-visual-game-tangram](q-visual-game-tangram/) | 2 | no | solved | tg-100, exact match key |
