@@ -40,6 +40,9 @@ Static quiz JS + page HTML scanned for `d-none`, `display:none`, `visually-hidde
 - Same Vercel routing trap as Q6: no `vercel.json` rewrite; export `app` from `app.py`.
 - "Deployment Protection is on" only covers the one-off deployment URLs; submit the public **alias**.
 - Keep it up until the deadline: the score is re-checked live on every Save.
+- After any redeploy, re-run the 5-challenge check: a redeploy from a half-edited file silently broke it once.
+  `vercel` acts on the folder you're in (`pwd` first); an env var added in the wrong folder lands on the wrong project.
+- Opening the URL in a browser gives HTTP 405: normal, the endpoint only accepts POST.
 
 ## Verification
 
