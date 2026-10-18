@@ -1,0 +1,122 @@
+[
+ {
+  "path": "docs/2024/file01.txt",
+  "category": "日本語"
+ },
+ {
+  "path": "content/chapter1/file02.txt",
+  "category": "résumé"
+ },
+ {
+  "path": "content/section-a/file03.txt",
+  "category": "logs"
+ },
+ {
+  "path": "archive/módulo-3/file04.txt",
+  "category": "日本語"
+ },
+ {
+  "path": "archive/2024/intro/file05.txt",
+  "category": "templates"
+ },
+ {
+  "path": "project/2024/file-name/file06.txt",
+  "category": "münchen"
+ },
+ {
+  "path": "project/fіle07.txt",
+  "category": "日本語"
+ },
+ {
+  "path": "content/section-a/références/file08.txt",
+  "category": "data"
+ },
+ {
+  "path": "docs/módulo-3/file09.txt",
+  "category": "scripts"
+ },
+ {
+  "path": "project/chapter1/file10.txt",
+  "category": "naïve-bayes"
+ },
+ {
+  "path": "content/file11.txt",
+  "category": "scripts"
+ },
+ {
+  "path": "docs/part 2/file12.txt",
+  "category": "documentation"
+ },
+ {
+  "path": "docs/part 2/fіle13.txt",
+  "category": "data"
+ },
+ {
+  "path": "docs/file14.txt",
+  "category": "templates"
+ },
+ {
+  "path": "content/módulo-3/appendix/file15.txt",
+  "category": "日本語"
+ },
+ {
+  "path": "project/2024/références/file16.txt",
+  "category": "reports"
+ },
+ {
+  "path": "project/section-a/advanced/file17.txt",
+  "category": "scripts"
+ },
+ {
+  "path": "content/file18.txt",
+  "category": "logs"
+ },
+ {
+  "path": "docs/chapter1/intro/café-2024/file19.txt",
+  "category": "日本語"
+ },
+ {
+  "path": "archive/módulo-3/file20.txt",
+  "category": "reports"
+ },
+ {
+  "path": "content/file-name/file21.txt",
+  "category": "notes"
+ },
+ {
+  "path": "project/módulo-3/intro/file22.txt",
+  "category": "resources"
+ },
+ {
+  "path": "project/chapter1/intro/file23.txt",
+  "category": "münchen"
+ },
+ {
+  "path": "project/file24.txt",
+  "category": "resources"
+ },
+ {
+  "path": "docs/file25.txt",
+  "category": "archives"
+ },
+ {
+  "path": "archive/módulo-3/file26.txt",
+  "category": "notes"
+ },
+ {
+  "path": "docs/fіle27.txt",
+  "category": "resources"
+ },
+ {
+  "path": "content/file28.txt",
+  "category": "templates"
+ },
+ {
+  "path": "project/2024/données/file29.txt",
+  "category": "reports"
+ },
+ {
+  "path": "docs/part 2/intro/file30.txt",
+  "category": "data"
+ }
+]
