@@ -1,0 +1,26 @@
+# TDS GA2 q-compose-redis-tunnel-server: FastAPI api + Redis on the internal compose network.
+# Run:  docker compose up --build -d   then tunnel port 8000.
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"          # only the api is published; redis stays internal
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]   # counts survive container restarts
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+    restart: unless-stopped
+volumes:
+  redis-data:
