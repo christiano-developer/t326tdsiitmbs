@@ -10,6 +10,7 @@
 | [q-deploy-analytics-platform-server](q-deploy-analytics-platform-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app/analytics |
 | [q-observability-metrics-server](q-observability-metrics-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app |
 | [q-ollama-tunnel-llm-server](q-ollama-tunnel-llm-server/) | 1 | yes | solved | {"url": "https://<random-words>.trycloudflare.com/v1/chat/completions", "model": "qwen2.5:3b"} |
+| [q-local-llm-structured-server](q-local-llm-structured-server/) | 2 | yes | solved | https://<random-words>.trycloudflare.com/extract |
 | [q-api-idempotency-pagination-server](q-api-idempotency-pagination-server/) | 2 | yes | solved | https://<your-project>.vercel.app |
 | [q-middleware-ratelimit-cors-server](q-middleware-ratelimit-cors-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app |
 | [q-ollama-stream-reassembly-server](q-ollama-stream-reassembly-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app/answer.json |
