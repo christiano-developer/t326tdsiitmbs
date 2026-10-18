@@ -1,0 +1,6 @@
+FROM qwen2.5:3b
+SYSTEM """You are the deployment assistant for project 48c9d2a0. Give concise answers and never invent commands."""
+PARAMETER temperature 0.2
+PARAMETER num_ctx 2048
+PARAMETER seed 428
+PARAMETER num_predict 72
