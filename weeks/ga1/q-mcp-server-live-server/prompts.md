@@ -34,3 +34,20 @@ email is okay in commits and file; any other credential such as api token or log
 - **Result:** the email stays as the code default with an `EXAM_EMAIL` env override (the deployed code is this
   exact version, so no redeploy needed). No tokens or logins anywhere in the folder.
 - **Next:** none.
+
+---
+
+## P3
+
+- **Tool / model:** same.
+- **Goal:** find why the live server broke.
+
+```text
+something happened to Q14, can you check why the url doesn't work
+```
+
+- **Result:** the live server answered every call with "server misconfigured: EXAM_EMAIL not set". It had been
+  redeployed from an intermediate version without the default email, and `vercel env add EXAM_EMAIL` had been run in
+  the Q6 folder (wrong project). Redeployed the current code (email default in code): 5/5 again, exam Check
+  "Live MCP checks passed." The browser's HTTP 405 on the URL is normal (MCP only accepts POST).
+- **Next:** none. Lesson: re-run the 5-challenge check after **every** redeploy, and check `pwd` before `vercel` commands.
