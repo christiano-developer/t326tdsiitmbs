@@ -9,7 +9,7 @@
 | [q-broken-json-server](q-broken-json-server/) | 1 | no | solved | repaired JSON, 300 records |
 | [q-config-precedence-server](q-config-precedence-server/) | 1 | yes | todo | |
 | [q-rename-files-server](q-rename-files-server/) | 1 | no | solved | `621877e7…1451` |
-| [q-csv-sales-analysis-server](q-csv-sales-analysis-server/) | 1 | no | todo | |
+| [q-csv-sales-analysis-server](q-csv-sales-analysis-server/) | 1 | no | solved | `12010` |
 | [q-github-pages](q-github-pages/) | 1 | yes | solved | https://<you>.github.io/<repo>/ (email in `email_off`) |
 | [q-git-forensics-token-server](q-git-forensics-token-server/) | 1.5 | no | todo | |
 | [q-cosine-similarity-server](q-cosine-similarity-server/) | 1.5 | no | todo | |
