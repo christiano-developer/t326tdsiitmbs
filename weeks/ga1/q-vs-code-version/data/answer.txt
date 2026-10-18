@@ -1,0 +1,35 @@
+Version:          Code 1.141.0 (2a59476c9bfcb90b3ddc372c36762471b7dfad1c, 2026-10-07T11:01:16.000Z)
+OS Version:       Darwin arm64 27.0.0
+CPUs:             Apple M2 (8 x 2400)
+Memory (System):  8.00GB (0.41GB free)
+Load (avg):       3, 3, 3
+VM:               0%
+Screen Reader:    no
+Process Argv:     --crash-reporter-id 5f1c2a8e-3d47-4b9e-9a61-0c7e2b4d8f13
+GPU Status:       2d_canvas:                              enabled
+                  canvas_oop_rasterization:               enabled_on
+                  direct_rendering_display_compositor:    disabled_off_ok
+                  gpu_compositing:                        enabled
+                  multiple_raster_threads:                enabled_on
+                  opengl:                                 enabled_on
+                  rasterization:                          enabled
+                  raw_draw:                               disabled_off_ok
+                  skia_graphite:                          disabled_off
+                  video_decode:                           enabled
+                  video_encode:                           enabled
+                  webgl:                                  enabled
+                  webgl2:                                 enabled
+                  webgpu:                                 enabled
+                  webnn:                                  disabled_off
+
+CPU %	Mem MB	   PID	Process
+    1	   164	 48213	code main
+    0	    74	 48216	   gpu-process
+    0	    41	 48217	   utility-network-service
+    2	   352	 48220	window [1] (Welcome — Visual Studio Code)
+    0	    90	 48231	shared-process
+    0	    66	 48232	ptyHost
+    0	     0	 48241	     /bin/zsh -il
+    0	    82	 48236	fileWatcher [1]
+    0	   131	 48239	extensionHost [1]
+
