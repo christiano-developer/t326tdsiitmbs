@@ -13,7 +13,7 @@
 | [q-github-pages](q-github-pages/) | 1 | yes | solved | https://<you>.github.io/<repo>/ (email in `email_off`) |
 | [q-git-forensics-token-server](q-git-forensics-token-server/) | 1.5 | no | solved | `stg_2cd3…3f7a` / "Add staging deploy token to app config" |
 | [q-cosine-similarity-server](q-cosine-similarity-server/) | 1.5 | no | solved | top-5 JSON, 10/10 |
-| [q-llm-yes-no-split](q-llm-yes-no-split/) | 1 | no | todo | |
+| [q-llm-yes-no-split](q-llm-yes-no-split/) | 1 | no | solved | certainty-gated multiplication prompt (76 chars) |
 | [q-termlog-rec-server](q-termlog-rec-server/) | 2 | no | todo | |
 | [q-mcp-server-live-server](q-mcp-server-live-server/) | 3 | yes | solved | https://<your-project>.vercel.app/mcp (live) |
 | [q-ledger-agent-server](q-ledger-agent-server/) | 4 | yes | todo | |
