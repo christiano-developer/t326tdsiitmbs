@@ -2,7 +2,7 @@
 
 | Question | Marks | Deploy | Status | Answer |
 |----------|-------|--------|--------|--------|
-| [q-vs-code-version](q-vs-code-version/) | 0.5 | no | todo | |
+| [q-vs-code-version](q-vs-code-version/) | 0.5 | no | solved | sample `code -s` output |
 | [q-http-headers-server](q-http-headers-server/) | 0.5 | no | solved | `NNUEPJHP` (hourly) |
 | [q-uv-http-post](q-uv-http-post/) | 0.5 | no | solved | httpbin JSON body (request_id `20a60e2a`) |
 | [q-npx-prettier](q-npx-prettier/) | 0.5 | no | solved | `b84b9fbf…f304` |
