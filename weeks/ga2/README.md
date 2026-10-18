@@ -6,6 +6,7 @@
 | [q-fastapi-metrics-cors-server](q-fastapi-metrics-cors-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app |
 | [q-oauth-jwks-verify-server](q-oauth-jwks-verify-server/) | 2 | yes | solved | https://<your-project>.vercel.app/verify |
 | [q-config-precedence-server](q-config-precedence-server/) | 1 | yes | solved | https://<your-project>.vercel.app/effective-config |
+| [q-compose-redis-tunnel-server](q-compose-redis-tunnel-server/) | 2 | yes | solved | https://<random-words>.trycloudflare.com |
 | [q-deploy-analytics-platform-server](q-deploy-analytics-platform-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app/analytics |
 | [q-observability-metrics-server](q-observability-metrics-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app |
 | [q-api-idempotency-pagination-server](q-api-idempotency-pagination-server/) | 2 | yes | solved | https://<your-project>.vercel.app |
