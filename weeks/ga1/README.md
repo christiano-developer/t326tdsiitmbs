@@ -11,7 +11,7 @@
 | [q-rename-files-server](q-rename-files-server/) | 1 | no | solved | `621877e7…1451` |
 | [q-csv-sales-analysis-server](q-csv-sales-analysis-server/) | 1 | no | solved | `12010` |
 | [q-github-pages](q-github-pages/) | 1 | yes | solved | https://<you>.github.io/<repo>/ (email in `email_off`) |
-| [q-git-forensics-token-server](q-git-forensics-token-server/) | 1.5 | no | todo | |
+| [q-git-forensics-token-server](q-git-forensics-token-server/) | 1.5 | no | solved | `stg_2cd3…3f7a` / "Add staging deploy token to app config" |
 | [q-cosine-similarity-server](q-cosine-similarity-server/) | 1.5 | no | todo | |
 | [q-llm-yes-no-split](q-llm-yes-no-split/) | 1 | no | todo | |
 | [q-termlog-rec-server](q-termlog-rec-server/) | 2 | no | todo | |
