@@ -2,6 +2,7 @@
 
 | Question | Marks | Deploy | Status | Answer |
 |----------|-------|--------|--------|--------|
+| [q-model-intelligence-auto-server](q-model-intelligence-auto-server/) | 2 | no | solved | primed surgeon riddle + "based only on the facts" (17/18 probe) |
 | [q-fastapi-metrics-cors-server](q-fastapi-metrics-cors-server/) | 1.5 | yes | solved | https://<your-project>.vercel.app |
 | [q-oauth-jwks-verify-server](q-oauth-jwks-verify-server/) | 2 | yes | solved | https://<your-project>.vercel.app/verify |
 | [q-config-precedence-server](q-config-precedence-server/) | 1 | yes | solved | https://<your-project>.vercel.app/effective-config |
