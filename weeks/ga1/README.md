@@ -16,5 +16,5 @@
 | [q-llm-yes-no-split](q-llm-yes-no-split/) | 1 | no | solved | certainty-gated multiplication prompt (76 chars) |
 | [q-termlog-rec-server](q-termlog-rec-server/) | 2 | no | solved | GitHub release asset `ga1-termlog/submission.tar.gz` |
 | [q-mcp-server-live-server](q-mcp-server-live-server/) | 3 | yes | solved | https://<your-project>.vercel.app/mcp (live) |
-| [q-ledger-agent-server](q-ledger-agent-server/) | 4 | yes | todo | |
+| [q-ledger-agent-server](q-ledger-agent-server/) | 4 | yes | solved | https://<your-project>.vercel.app/ (live, 6/6) |
 | [q-visual-game-tangram](q-visual-game-tangram/) | 2 | no | solved | tg-100, exact match key |
